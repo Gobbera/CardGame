@@ -176,5 +176,56 @@ let deck = []
               cardAsOuros, cardAsEspadas, cardAsCopas, cardAsPaus,
               cardDoisOuros, cardDoisEspadas, cardDoisCopas, cardDoisPaus,
               cardTresOuros, cardTresEspadas, cardTresCopas, cardTresPaus);
-
-              console.log(deck)
+          
+    function startGame() {
+    let playerDeck1 = [];
+    let playerDeck2 = [];
+    let playerDeck3 = [];
+    let playerDeck4 = [];
+    let manilha = [];
+  
+    let randomIndex0 = Math.floor(Math.random() * deck.length);
+        if (randomIndex0 >= deck.length) {
+            randomIndex0 = deck.length - 1;
+          }  
+    let removedCard0 = deck.splice(randomIndex0, 1);
+    manilha.push(removedCard0[0]);
+  
+    for (let i = 0; i < 3; i++) {
+      let randomIndex1 = Math.floor(Math.random() * deck.length);
+      let randomIndex2 = Math.floor(Math.random() * deck.length);
+      let randomIndex3 = Math.floor(Math.random() * deck.length);
+      let randomIndex4 = Math.floor(Math.random() * deck.length);
+  
+      if (randomIndex1 >= deck.length) {
+        randomIndex1 = deck.length - 1;
+      }
+      if (randomIndex2 >= deck.length) {
+        randomIndex2 = deck.length - 1;
+      }
+      if (randomIndex3 >= deck.length) {
+        randomIndex3 = deck.length - 1;
+      }
+      if (randomIndex4 >= deck.length) {
+        randomIndex4 = deck.length - 1;
+      }
+      
+      let removedCard1 = deck.splice(randomIndex1, 1);
+      let removedCard2 = deck.splice(randomIndex2, 1);
+      let removedCard3 = deck.splice(randomIndex3, 1);
+      let removedCard4 = deck.splice(randomIndex4, 1);
+      playerDeck1.push(removedCard1[0]);
+      playerDeck2.push(removedCard2[0]);
+      playerDeck3.push(removedCard3[0]);
+      playerDeck4.push(removedCard4[0]);
+    }
+  
+    console.log('Player deck1:', playerDeck1);
+    console.log('Player deck2:', playerDeck2);
+    console.log('Player deck3:', playerDeck3);
+    console.log('Player deck4:', playerDeck4);
+    console.log('Manilha:', manilha);
+    console.log('Deck:', deck);
+  }
+    
+startGame();
