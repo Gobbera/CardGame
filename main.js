@@ -1,14 +1,14 @@
 
-    const quatro = 1;
-    const cinco = 2; 
-    const seis = 3;
-    const sete = 4;
-    const oito = 5;
-    const nove = 6;
-    const dez = 7;
-    const dama = 8;
-    const valete = 9;
-    const reis = 10;     
+    const quatro = 4;
+    const cinco = 5; 
+    const seis = 6;
+    const sete = 7;
+    const oito = 8;
+    const nove = 9;
+    const dez = 10;
+    const dama = 11;
+    const valete = 12;
+    const reis = 13;     
     const as = 11;
     const dois = 12;
     const tres = 13;
