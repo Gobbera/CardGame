@@ -7,6 +7,7 @@ header {
     width: 100%;
     height: 6vh;
     background-color: rgb(218, 218, 218);
+    
 }
 
 body {
@@ -50,32 +51,41 @@ input:checked + .button {
 input:checked + .button::before {
     transform: translateX(24px);
 }
-input {
+#check {
     display: none;
 }
 
 .menu-button {
     background-color: #EA5455;
-    border: none;
-    border-bottom: 8px solid #a93a3a;
+    border-top: none;
+    border-left: none;
+    border-bottom: 10px solid #a93a3a;
+    border-right: 10px solid #a93a3a;
     width: 280px;
     height: 64px;
-    border-radius: 24px;
+    border-radius: 16px;
     font-size: 32px;
     cursor: pointer;
     transition: all 0.1s;
     color: white;
+    font-family: 'Bebas Neue', cursive;
+    -webkit-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
+    -moz-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
+    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
 }
 .menu-button:hover {
-    transform: scale(1.01);
 }
 .menu-button:active {
     background-color: #EA5455;
-    border: 8px solid #c33c3c;
-    border-bottom: 1px;
-    transform: scale(0.99);
+    border-top: 10px solid #a93a3a;
+    border-left: 10px solid #a93a3a;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
-
 
 .menu {
     display: grid;
@@ -86,4 +96,22 @@ input {
     height: 500px;
     background-color: #F9F5EB;
     border-radius: 16px;
+    -webkit-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
+    -moz-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
+    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13)
+}
+
+.nickname-tag {
+    justify-self: center;
+    font-size: 32px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.nickname-input {
+    text-align: center;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 16px;
+    border: none;
+    font-family: 'Bebas Neue', cursive;
 }
