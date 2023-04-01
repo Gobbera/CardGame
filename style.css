@@ -96,7 +96,7 @@ input:checked + .button::before {
     border-radius: 16px;
     -webkit-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
     -moz-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
-    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13)
+    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
 }
 
 .nickname-tag {
@@ -112,4 +112,50 @@ input:checked + .button::before {
     border-radius: 16px;
     border: none;
     font-family: 'Bebas Neue', cursive;
+}
+
+#rules-text {
+    text-align: center;
+}
+
+.dishide {
+    animation: dishideElement 1s;
+}
+
+.hide {
+    animation: hideElement 1s;
+}
+
+.hideToPlay {
+    animation: hideToPlayElement 1s;
+}
+
+@keyframes hideToPlayElement {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes hideElement {
+    from {
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+    to {
+        transform: translateX(1000px);
+        opacity: 0%;
+    }
+}
+@keyframes dishideElement {
+    from {
+        transform: translateX(-1000px);
+        opacity: 0%;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 100%;
+    }
 }
