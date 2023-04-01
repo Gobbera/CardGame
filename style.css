@@ -56,7 +56,7 @@ input:checked + .button::before {
 }
 
 .menu-button {
-    background-color: #EA5455;
+    background: linear-gradient(180deg, rgb(214, 117, 117) 20%,#EA5455 80%);
     border-top: none;
     border-left: none;
     border-bottom: 10px solid #a93a3a;
@@ -77,8 +77,6 @@ input:checked + .button::before {
 }
 .menu-button:active {
     background-color: #EA5455;
-    border-top: 10px solid #a93a3a;
-    border-left: 10px solid #a93a3a;
     border-right: 2px solid rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     transform: scale(0.98);
