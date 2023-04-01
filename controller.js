@@ -7,9 +7,21 @@ const nicknameTag = document.getElementById('nickname-tag');
 const nicknameInput = document.getElementById('nickname-input');
 const rulesText = document.getElementById('rules-text');
 const returnButton = document.getElementById('return-button');
+const playerName = document.getElementById('player-name');
+const playerLife = document.getElementById('player-life');
+
+const player = document.getElementById('player');
+const player2 = document.getElementById('player2');
+const player3 = document.getElementById('player3');
+const player4 = document.getElementById('player4');
+
 rulesText.hidden = true;
 returnButton.hidden = true;
 returnMenuButton.hidden = true;
+player.hidden = true;
+player2.hidden = true;
+player3.hidden = true;
+player4.hidden = true;
 
 rulesButton.onclick = function () {
     playButton.classList.add('hide');
@@ -52,6 +64,10 @@ returnButton.onclick = function () {
 playButton.onclick = function () {
     menu.classList.add('hideToPlay');
     returnMenuButton.hidden = false;
+    player.hidden = false;
+    player2.hidden = false;
+    player3.hidden = false;
+    player4.hidden = false;
     setTimeout(function () {
         container.removeChild(menu);
         menu.hidden = true;
