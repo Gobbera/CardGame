@@ -56,7 +56,7 @@ input:checked + .button::before {
 }
 
 .menu-button {
-    background: linear-gradient(180deg, rgb(255, 129, 129) 10%, #EA5455 90%) ;
+    background: linear-gradient(180deg, rgb(214, 117, 117) 20%,#EA5455 80%);
     border-top: none;
     border-left: none;
     border-bottom: 10px solid #a93a3a;
@@ -76,7 +76,7 @@ input:checked + .button::before {
 .menu-button:hover {
 }
 .menu-button:active {
-    background: linear-gradient(180deg, rgb(255, 129, 129) 10%, #e34949 90%);
+    background-color: #EA5455;
     border-right: 2px solid rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     transform: scale(0.98);
@@ -96,7 +96,7 @@ input:checked + .button::before {
     border-radius: 16px;
     -webkit-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
     -moz-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
-    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13)
+    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.13);
 }
 
 .nickname-tag {
@@ -112,4 +112,50 @@ input:checked + .button::before {
     border-radius: 16px;
     border: none;
     font-family: 'Bebas Neue', cursive;
+}
+
+#rules-text {
+    text-align: center;
+}
+
+.dishide {
+    animation: dishideElement 1s;
+}
+
+.hide {
+    animation: hideElement 1s;
+}
+
+.hideToPlay {
+    animation: hideToPlayElement 1s;
+}
+
+@keyframes hideToPlayElement {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes hideElement {
+    from {
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+    to {
+        transform: translateX(1000px);
+        opacity: 0%;
+    }
+}
+@keyframes dishideElement {
+    from {
+        transform: translateX(-1000px);
+        opacity: 0%;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 100%;
+    }
 }
