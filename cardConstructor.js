@@ -176,6 +176,8 @@ let deck = []
               cardAsOuros, cardAsEspadas, cardAsCopas, cardAsPaus,
               cardDoisOuros, cardDoisEspadas, cardDoisCopas, cardDoisPaus,
               cardTresOuros, cardTresEspadas, cardTresCopas, cardTresPaus);
+
+    cards_dealt = [False] * len(deck);
           
     function startGame() {
     let playerDeck1 = [];
