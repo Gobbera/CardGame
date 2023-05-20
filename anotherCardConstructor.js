@@ -92,14 +92,17 @@ let deck = [
             getCard();
             card1P1.innerText = card.Name + ' ' + card.naipe;
             card1P1.dataset.value = card.value;
+            card1P1.dataset.naipe = card.naipe;
             card1P1.dataset.id = card.id;
             getCard();
             card2P1.innerText = card.Name + ' ' + card.naipe;
             card2P1.dataset.value = card.value;
+            card2P1.dataset.naipe = card.naipe;
             card2P1.dataset.id = card.id;
             getCard();
             card3P1.innerText = card.Name + ' ' + card.naipe;
             card3P1.dataset.value = card.value;
+            card3P1.dataset.naipe = card.naipe;
             card3P1.dataset.id = card.id;
         //}
     }
@@ -108,14 +111,17 @@ let deck = [
             getCard();
             card1P2.innerText = card.Name + ' ' + card.naipe;
             card1P2.dataset.value = card.value;
+            card1P2.dataset.naipe = card.naipe;
             card1P2.dataset.id = card.id;
             getCard();
             card2P2.innerText = card.Name + ' ' + card.naipe;
             card2P2.dataset.value = card.value;
+            card2P2.dataset.naipe = card.naipe;
             card2P2.dataset.id = card.id;
             getCard();
             card3P2.innerText = card.Name + ' ' + card.naipe;
             card3P2.dataset.value = card.value;
+            card3P2.dataset.naipe = card.naipe;
             card3P2.dataset.id = card.id;
         //}
     }
@@ -124,14 +130,17 @@ let deck = [
             getCard();
             card1P3.innerText = card.Name + ' ' + card.naipe;
             card1P3.dataset.value = card.value;
+            card1P3.dataset.naipe = card.naipe;
             card1P3.dataset.id = card.id;
             getCard();
             card2P3.innerText = card.Name + ' ' + card.naipe;
             card2P3.dataset.value = card.value;
+            card2P3.dataset.naipe = card.naipe;
             card2P3.dataset.id = card.id;
             getCard();
             card3P3.innerText = card.Name + ' ' + card.naipe;
             card3P3.dataset.value = card.value;
+            card3P3.dataset.naipe = card.naipe;
             card3P3.dataset.id = card.id;
         //}
     }
@@ -140,14 +149,17 @@ let deck = [
             getCard();
             card1P4.innerText = card.Name + ' ' + card.naipe;
             card1P4.dataset.value = card.value;
+            card1P4.dataset.naipe = card.naipe;
             card1P4.dataset.id = card.id;
             getCard();
             card2P4.innerText = card.Name + ' ' + card.naipe;
             card2P4.dataset.value = card.value;
+            card2P4.dataset.naipe = card.naipe;
             card2P4.dataset.id = card.id;
             getCard();
             card3P4.innerText = card.Name + ' ' + card.naipe;
             card3P4.dataset.value = card.value;
+            card3P4.dataset.naipe = card.naipe;
             card3P4.dataset.id = card.id;
         //}
     }
@@ -167,21 +179,69 @@ let deck = [
     let allCardsInGame = document.getElementsByClassName('card');
     
     function roundRuleSettings () {
-        for(let i = 0; i < 11; i++) {
-            if(vira.dataset.id == allCardsInGame[i].dataset.id) {
-                allCardsInGame[i]
-                //<debug>
-                debugger;
-                //</debug>
-                
-                allCardsInGame[i].dataset.value = 1000;
-                //<debug>
-                debugger;
-                //</debug>
-                
+        for (let i = 0; i < 11; i++) {
+            if (vira.dataset.id == allCardsInGame[i].dataset.id) {
+                if (allCardsInGame[i].dataset.naipe == 'ouros') {
+                    allCardsInGame[i].dataset.value = ouros;
+                } 
+                if (allCardsInGame[i].dataset.naipe == 'espadas') {
+                    allCardsInGame[i].dataset.value = espadas;
+                } 
+                if (allCardsInGame[i].dataset.naipe == 'copas') {
+                    allCardsInGame[i].dataset.value = copas;
+                } 
+                if (allCardsInGame[i].dataset.naipe == 'paus') {
+                    allCardsInGame[i].dataset.value = paus;
+                } 
             }
         }
     } 
     roundRuleSettings();
 
+    let cardsOnTable = [];
+    let playerTurn = 0;
+    
+    function throwCard (id) {
+        let cardThrowed = document.getElementById(id);
+        cardThrowed = cardThrowed.dataset.value;
+        cardsOnTable.push(cardThrowed);
+        playerTurn += 1;
+        if (playerTurn === 4) {
+            whoWin();
+        }
+    }
+
+    function whoWin () {
+        if (cardsOnTable[0] > cardsOnTable[1] && cardsOnTable[2] && cardsOnTable[3]) {
+            roundConditions(1);
+        }
+        if (cardsOnTable[1] > cardsOnTable[0] && cardsOnTable[2] && cardsOnTable[3]) {
+            roundConditions(2);
+        }
+        if (cardsOnTable[2] > cardsOnTable[0] && cardsOnTable[1] && cardsOnTable[3]) {
+            roundConditions(3);
+        }
+        if (cardsOnTable[3] > cardsOnTable[0] && cardsOnTable[1] && cardsOnTable[2]) {
+            roundConditions(4);
+        }
+    }
+    
+    function roundConditions(op) {
+        switch(op) {
+            case 1: //vitoria jogador 1
+                console.log("vitoraP1");
+                break;
+            case 2: //vitoria jogador 2
+                console.log("vitoraP2");
+                break;
+            case 3: //vitoria jogador 3
+                console.log("vitoraP3");        
+                break;
+            case 4: //vitoria jogador 4
+                console.log("vitoraP4");
+                break;
+            default:
+                console.log("default");
+        }
+    }
 
