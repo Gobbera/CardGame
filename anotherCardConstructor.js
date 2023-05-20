@@ -169,11 +169,6 @@ let deck = [
         vira.dataset.value = card.value;
         vira.dataset.id = card.id;
     }
-    player1Deck();  
-    player2Deck();  
-    player3Deck();  
-    player4Deck();  
-    viras();
     
     
     let allCardsInGame = document.getElementsByClassName('card');
@@ -203,6 +198,7 @@ let deck = [
     
     function throwCard (id) {
         let cardThrowed = document.getElementById(id);
+        removeCard(cardThrowed);
         cardThrowed = cardThrowed.dataset.value;
         cardsOnTable.push(cardThrowed);
         playerTurn += 1;
@@ -240,8 +236,32 @@ let deck = [
             case 4: //vitoria jogador 4
                 console.log("vitoraP4");
                 break;
+            case 5: //empate
+                console.log("vitoraP4");
+                break;
             default:
                 console.log("default");
         }
     }
 
+    function removeCard (cardThrowed) {
+        cardThrowed.hidden = true;
+
+    }
+
+    const player1 = document.getElementById('player1');
+    const player2 = document.getElementById('player2');
+    const player3 = document.getElementById('player3');
+    const player4 = document.getElementById('player4');
+    const playerTurnIndicator = document.getElementById('playerTurnIndicator');
+
+    function startGame () {
+        player1Deck();  
+        player2Deck();  
+        player3Deck();  
+        player4Deck();  
+        viras();
+        playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
+    }
+
+    startGame();
