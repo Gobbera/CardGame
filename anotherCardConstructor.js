@@ -236,9 +236,9 @@ let deck = [
             case 4: //vitoria jogador 4
                 console.log("vitoraP4");
                 break;
-            case 5: //empate
+            /* case 5: //empate
                 console.log("vitoraP4");
-                break;
+                break; */
             default:
                 console.log("default");
         }
@@ -255,14 +255,24 @@ let deck = [
     const player4 = document.getElementById('player4');
     const playerTurnIndicator = document.getElementById('playerTurnIndicator');
 
+    player1Deck();  
+    player2Deck();  
+    player3Deck();  
+    player4Deck();  
+    viras();
+
     function startGame () {
-        player1Deck();  
-        player2Deck();  
-        player3Deck();  
-        player4Deck();  
-        viras();
+        onPlayer1Turn();
+    }
+    startGame();
+
+    function onPlayer1Turn () {
         playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
 
+        card1P1.disabled = false;
+        card2P1.disabled = false;
+        card3P1.disabled = false;
+        
         card1P2.disabled = true;
         card2P2.disabled = true;
         card3P2.disabled = true;
@@ -274,6 +284,78 @@ let deck = [
         card1P4.disabled = true;
         card2P4.disabled = true;
         card3P4.disabled = true;
+
+        card1P1.addEventListener('click', onPlayer2Turn);
+        card2P1.addEventListener('click', onPlayer2Turn);
+        card3P1.addEventListener('click', onPlayer2Turn);
+        
+    }
+    function onPlayer2Turn () {
+        playerTurnIndicator.innerText = 'Vez de ' + 'jogador 2';
+        
+        
+        card1P1.disabled = true;
+        card2P1.disabled = true;
+        card3P1.disabled = true;
+        
+        card1P2.disabled = false;
+        card2P2.disabled = false;
+        card3P2.disabled = false;
+        
+        card1P3.disabled = true;
+        card2P3.disabled = true;
+        card3P3.disabled = true;
+        
+        card1P4.disabled = true;
+        card2P4.disabled = true;
+        card3P4.disabled = true;
+        
+        card1P2.addEventListener('click', onPlayer3Turn);
+        card2P2.addEventListener('click', onPlayer3Turn);
+        card3P2.addEventListener('click', onPlayer3Turn);
+        
+    }
+    function onPlayer3Turn () {
+        playerTurnIndicator.innerText = 'Vez de ' + 'jogador 3';
+        
+        card1P1.disabled = true;
+        card2P1.disabled = true;
+        card3P1.disabled = true;
+        
+        card1P2.disabled = true;
+        card2P2.disabled = true;
+        card3P2.disabled = true;
+        
+        card1P3.disabled = false;
+        card2P3.disabled = false;
+        card3P3.disabled = false;
+        
+        card1P4.disabled = true;
+        card2P4.disabled = true;
+        card3P4.disabled = true;
+
+        card1P3.addEventListener('click', onPlayer4Turn);
+        card2P3.addEventListener('click', onPlayer4Turn);
+        card3P3.addEventListener('click', onPlayer4Turn);
+    }
+    function onPlayer4Turn () {
+        playerTurnIndicator.innerText = 'Vez de ' + 'jogador 4';
+        
+        card1P1.disabled = true;
+        card2P1.disabled = true;
+        card3P1.disabled = true;
+        
+        card1P2.disabled = true;
+        card2P2.disabled = true;
+        card3P2.disabled = true;
+        
+        card1P3.disabled = true;
+        card2P3.disabled = true;
+        card3P3.disabled = true;
+        
+        card1P4.disabled = false;
+        card2P4.disabled = false;
+        card3P4.disabled = false;
     }
 
     startGame();
