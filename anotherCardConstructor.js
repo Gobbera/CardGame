@@ -262,6 +262,18 @@ let deck = [
         player4Deck();  
         viras();
         playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
+
+        card1P2.disabled = true;
+        card2P2.disabled = true;
+        card3P2.disabled = true;
+        
+        card1P3.disabled = true;
+        card2P3.disabled = true;
+        card3P3.disabled = true;
+        
+        card1P4.disabled = true;
+        card2P4.disabled = true;
+        card3P4.disabled = true;
     }
 
     startGame();
