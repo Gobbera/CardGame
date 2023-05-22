@@ -197,11 +197,22 @@ let p4;
 let cardsOnTable = [p1, p2, p3, p4];
 let playerTurn = 0;
 
-function throwCard(id, IdPlayerTurn) {
+function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
     let cardThrowed = document.getElementById(id);
     removeCard(cardThrowed);
     cardThrowed = cardThrowed.dataset.value;
-    cardsOnTable.push(parseInt(cardThrowed));
+    if (IdPlayerTurn === 1) {
+        cardsOnTable[0] = parseInt(cardThrowed);
+    }
+    if (IdPlayerTurn === 2) {
+        cardsOnTable[1] = parseInt(cardThrowed);
+    }
+    if (IdPlayerTurn === 3) {
+        cardsOnTable[2] = parseInt(cardThrowed);
+    }
+    if (IdPlayerTurn === 4) {
+        cardsOnTable[3] = parseInt(cardThrowed);
+    }
     console.log(cardsOnTable);
     playerTurn += 1;
     if (playerTurn === 4) {
@@ -230,14 +241,14 @@ function throwCard(id, IdPlayerTurn) {
             return;
         }
     }
-    nextPlayerTurn(IdPlayerTurn);
+    nextPlayerTurn(IdNextPlayerTurn);
 }
 
 
 function roundConditions(op) {
     console.log(cardsOnTable);
     playerTurn = 0;
-    cardsOnTable = []
+    cardsOnTable = [p1, p2, p3, p4]
     switch (op) {
         case 1: //vitoria jogador 1
             console.log("vitoraP1");
@@ -273,8 +284,8 @@ const player4 = document.getElementById('player4');
 const playerTurnIndicator = document.getElementById('playerTurnIndicator');
 
 
-function nextPlayerTurn(IdPlayerTurn) {
-    switch (IdPlayerTurn) {
+function nextPlayerTurn(IdNextPlayerTurn) {
+    switch (IdNextPlayerTurn) {
         case 1:
             playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
 
