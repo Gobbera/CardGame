@@ -31,10 +31,10 @@ let espadas5 = { id: 2, Name: '5', naipe: 'espadas', value: 2, pick: true };
 let copas5 = { id: 2, Name: '5', naipe: 'copas', value: 2, pick: true };
 let paus5 = { id: 2, Name: '5', naipe: 'paus', value: 2, pick: true };
 
-let ouros6 = { id: 3, Name: '5', naipe: 'ouros', value: 3, pick: true };
-let espadas6 = { id: 3, Name: '5', naipe: 'espadas', value: 3, pick: true };
-let copas6 = { id: 3, Name: '5', naipe: 'copas', value: 3, pick: true };
-let paus6 = { id: 3, Name: '5', naipe: 'paus', value: 3, pick: true };
+let ouros6 = { id: 3, Name: '6', naipe: 'ouros', value: 3, pick: true };
+let espadas6 = { id: 3, Name: '6', naipe: 'espadas', value: 3, pick: true };
+let copas6 = { id: 3, Name: '6', naipe: 'copas', value: 3, pick: true };
+let paus6 = { id: 3, Name: '6', naipe: 'paus', value: 3, pick: true };
 
 let ouros7 = { id: 4, Name: '7', naipe: 'ouros', value: 4, pick: true };
 let espadas7 = { id: 4, Name: '7', naipe: 'espadas', value: 4, pick: true };
@@ -72,9 +72,15 @@ let copas3 = { id: 10, Name: '3', naipe: 'copas', value: 10, pick: true };
 let paus3 = { id: 10, Name: '3', naipe: 'paus', value: 10, pick: true };
 
 let deck = [
-    ouros4, espadas4, copas4, paus4, ouros5, espadas5, copas5, paus5, ouros6, espadas6, copas6, paus6,
-    ouros7, espadas7, copas7, paus7, ourosQ, espadasQ, copasQ, pausQ, ourosJ, espadasJ, copasJ, pausJ,
-    ourosK, espadasK, copasK, pausK, ourosA, espadasA, copasA, pausA, ouros2, espadas2, copas2, paus2,
+    ouros4, espadas4, copas4, paus4,
+    ouros5, espadas5, copas5, paus5,
+    ouros6, espadas6, copas6, paus6,
+    ouros7, espadas7, copas7, paus7,
+    ourosQ, espadasQ, copasQ, pausQ,
+    ourosJ, espadasJ, copasJ, pausJ,
+    ourosK, espadasK, copasK, pausK,
+    ourosA, espadasA, copasA, pausA,
+    ouros2, espadas2, copas2, paus2,
     ouros3, espadas3, copas3, paus3
 ]
 
@@ -88,7 +94,6 @@ function getCard() {
     card.pick = false;
 }
 function player1Deck() {
-    //for (let i = 0; i < 3; i++) { TODO: TALVEZ MUDE O METODO PARA QUE A APLICACAO SEJA ESCALAVEL
     getCard();
     card1P1.innerText = card.Name + ' ' + card.naipe;
     card1P1.dataset.value = card.value;
@@ -104,10 +109,8 @@ function player1Deck() {
     card3P1.dataset.value = card.value;
     card3P1.dataset.naipe = card.naipe;
     card3P1.dataset.id = card.id;
-    //}
 }
 function player2Deck() {
-    //for (let i = 0; i < 3; i++) {
     getCard();
     card1P2.innerText = card.Name + ' ' + card.naipe;
     card1P2.dataset.value = card.value;
@@ -123,10 +126,8 @@ function player2Deck() {
     card3P2.dataset.value = card.value;
     card3P2.dataset.naipe = card.naipe;
     card3P2.dataset.id = card.id;
-    //}
 }
 function player3Deck() {
-    //for (let i = 0; i < 3; i++) {
     getCard();
     card1P3.innerText = card.Name + ' ' + card.naipe;
     card1P3.dataset.value = card.value;
@@ -142,10 +143,8 @@ function player3Deck() {
     card3P3.dataset.value = card.value;
     card3P3.dataset.naipe = card.naipe;
     card3P3.dataset.id = card.id;
-    //}
 }
 function player4Deck() {
-    //for (let i = 0; i < 3; i++) {
     getCard();
     card1P4.innerText = card.Name + ' ' + card.naipe;
     card1P4.dataset.value = card.value;
@@ -161,7 +160,6 @@ function player4Deck() {
     card3P4.dataset.value = card.value;
     card3P4.dataset.naipe = card.naipe;
     card3P4.dataset.id = card.id;
-    //}
 }
 function viras() {
     getCard();
@@ -191,15 +189,20 @@ function roundRuleSettings() {
         }
     }
 }
+let p1;
+let p2;
+let p3;
+let p4;
 
-let cardsOnTable = [];
+let cardsOnTable = [p1, p2, p3, p4];
 let playerTurn = 0;
 
-function throwCard(id) {
+function throwCard(id, IdPlayerTurn) {
     let cardThrowed = document.getElementById(id);
     removeCard(cardThrowed);
     cardThrowed = cardThrowed.dataset.value;
     cardsOnTable.push(parseInt(cardThrowed));
+    console.log(cardsOnTable);
     playerTurn += 1;
     if (playerTurn === 4) {
         if (cardsOnTable[0] > cardsOnTable[1] &&
@@ -227,6 +230,7 @@ function throwCard(id) {
             return;
         }
     }
+    nextPlayerTurn(IdPlayerTurn);
 }
 
 
@@ -234,23 +238,22 @@ function roundConditions(op) {
     console.log(cardsOnTable);
     playerTurn = 0;
     cardsOnTable = []
-    console.log(cardsOnTable);
     switch (op) {
         case 1: //vitoria jogador 1
             console.log("vitoraP1");
-            onPlayer1Turn();
+            nextPlayerTurn(1);
             break;
         case 2: //vitoria jogador 2
             console.log("vitoraP2");
-            onPlayer2Turn();
+            nextPlayerTurn(2);
             break;
         case 3: //vitoria jogador 3
             console.log("vitoraP3");
-            onPlayer3Turn();
+            nextPlayerTurn(3);
             break;
         case 4: //vitoria jogador 4
             console.log("vitoraP4");
-            onPlayer4Turn();
+            nextPlayerTurn(4);
             break;
         /* case 5: //empate
             console.log("vitoraP4");
@@ -270,100 +273,84 @@ const player4 = document.getElementById('player4');
 const playerTurnIndicator = document.getElementById('playerTurnIndicator');
 
 
-function onPlayer1Turn() {
-    playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
+function nextPlayerTurn(IdPlayerTurn) {
+    switch (IdPlayerTurn) {
+        case 1:
+            playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
 
-    card1P1.disabled = false;
-    card2P1.disabled = false;
-    card3P1.disabled = false;
+            card1P1.disabled = false;
+            card2P1.disabled = false;
+            card3P1.disabled = false;
 
-    card1P2.disabled = true;
-    card2P2.disabled = true;
-    card3P2.disabled = true;
+            card1P2.disabled = true;
+            card2P2.disabled = true;
+            card3P2.disabled = true;
 
-    card1P3.disabled = true;
-    card2P3.disabled = true;
-    card3P3.disabled = true;
+            card1P3.disabled = true;
+            card2P3.disabled = true;
+            card3P3.disabled = true;
 
-    card1P4.disabled = true;
-    card2P4.disabled = true;
-    card3P4.disabled = true;
+            card1P4.disabled = true;
+            card2P4.disabled = true;
+            card3P4.disabled = true;
+            break;
+        case 2:
+            playerTurnIndicator.innerText = 'Vez de ' + 'jogador 2';
 
-    card1P1.addEventListener('click', onPlayer2Turn);
-    card2P1.addEventListener('click', onPlayer2Turn);
-    card3P1.addEventListener('click', onPlayer2Turn);
+            card1P1.disabled = true;
+            card2P1.disabled = true;
+            card3P1.disabled = true;
 
-}
-function onPlayer2Turn() {
-    playerTurnIndicator.innerText = 'Vez de ' + 'jogador 2';
+            card1P2.disabled = false;
+            card2P2.disabled = false;
+            card3P2.disabled = false;
 
-    card1P1.disabled = true;
-    card2P1.disabled = true;
-    card3P1.disabled = true;
+            card1P3.disabled = true;
+            card2P3.disabled = true;
+            card3P3.disabled = true;
 
-    card1P2.disabled = false;
-    card2P2.disabled = false;
-    card3P2.disabled = false;
+            card1P4.disabled = true;
+            card2P4.disabled = true;
+            card3P4.disabled = true;
+            break;
+        case 3:
+            playerTurnIndicator.innerText = 'Vez de ' + 'jogador 3';
 
-    card1P3.disabled = true;
-    card2P3.disabled = true;
-    card3P3.disabled = true;
+            card1P1.disabled = true;
+            card2P1.disabled = true;
+            card3P1.disabled = true;
 
-    card1P4.disabled = true;
-    card2P4.disabled = true;
-    card3P4.disabled = true;
+            card1P2.disabled = true;
+            card2P2.disabled = true;
+            card3P2.disabled = true;
 
-    card1P2.addEventListener('click', onPlayer3Turn);
-    card2P2.addEventListener('click', onPlayer3Turn);
-    card3P2.addEventListener('click', onPlayer3Turn);
+            card1P3.disabled = false;
+            card2P3.disabled = false;
+            card3P3.disabled = false;
 
-}
-function onPlayer3Turn() {
-    playerTurnIndicator.innerText = 'Vez de ' + 'jogador 3';
+            card1P4.disabled = true;
+            card2P4.disabled = true;
+            card3P4.disabled = true;
+            break;
+        case 4:
+            playerTurnIndicator.innerText = 'Vez de ' + 'jogador 4';
 
-    card1P1.disabled = true;
-    card2P1.disabled = true;
-    card3P1.disabled = true;
+            card1P1.disabled = true;
+            card2P1.disabled = true;
+            card3P1.disabled = true;
 
-    card1P2.disabled = true;
-    card2P2.disabled = true;
-    card3P2.disabled = true;
+            card1P2.disabled = true;
+            card2P2.disabled = true;
+            card3P2.disabled = true;
 
-    card1P3.disabled = false;
-    card2P3.disabled = false;
-    card3P3.disabled = false;
+            card1P3.disabled = true;
+            card2P3.disabled = true;
+            card3P3.disabled = true;
 
-    card1P4.disabled = true;
-    card2P4.disabled = true;
-    card3P4.disabled = true;
-
-    card1P3.addEventListener('click', onPlayer4Turn);
-    card2P3.addEventListener('click', onPlayer4Turn);
-    card3P3.addEventListener('click', onPlayer4Turn);
-}
-function onPlayer4Turn() {
-    playerTurnIndicator.innerText = 'Vez de ' + 'jogador 4';
-
-    card1P1.disabled = true;a
-    card2P1.disabled = true;
-    card3P1.disabled = true;
-
-    card1P2.disabled = true;
-    card2P2.disabled = true;
-    card3P2.disabled = true;
-
-    card1P3.disabled = true;
-    card2P3.disabled = true;
-    card3P3.disabled = true;
-
-    card1P4.disabled = false;
-    card2P4.disabled = false;
-    card3P4.disabled = false;
-
-    if(playerTurn === 4) {
-        card1P4.addEventListener('click', onPlayer1Turn);
-        card2P4.addEventListener('click', onPlayer1Turn);
-        card3P4.addEventListener('click', onPlayer1Turn);
+            card1P4.disabled = false;
+            card2P4.disabled = false;
+            card3P4.disabled = false;
+            break;
     }
 }
 
@@ -374,7 +361,9 @@ function startGame() {
     player4Deck();
     viras();
     roundRuleSettings();
-    onPlayer1Turn();
-
+    nextPlayerTurn(1);
 }
+
+
+
 startGame();
