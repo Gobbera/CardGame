@@ -344,7 +344,7 @@ function onPlayer3Turn() {
 function onPlayer4Turn() {
     playerTurnIndicator.innerText = 'Vez de ' + 'jogador 4';
 
-    card1P1.disabled = true;
+    card1P1.disabled = true;a
     card2P1.disabled = true;
     card3P1.disabled = true;
 
