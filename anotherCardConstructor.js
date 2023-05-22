@@ -270,17 +270,6 @@ const player4 = document.getElementById('player4');
 const playerTurnIndicator = document.getElementById('playerTurnIndicator');
 
 
-function startGame() {
-    player1Deck();
-    player2Deck();
-    player3Deck();
-    player4Deck();
-    viras();
-    roundRuleSettings();
-    onPlayer1Turn();
-
-}
-
 function onPlayer1Turn() {
     playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
 
@@ -371,9 +360,21 @@ function onPlayer4Turn() {
     card2P4.disabled = false;
     card3P4.disabled = false;
 
-    card1P3.addEventListener('click', onPlayer1Turn);
-    card2P3.addEventListener('click', onPlayer1Turn);
-    card3P3.addEventListener('click', onPlayer1Turn);
+    if(playerTurn === 4) {
+        card1P4.addEventListener('click', onPlayer1Turn);
+        card2P4.addEventListener('click', onPlayer1Turn);
+        card3P4.addEventListener('click', onPlayer1Turn);
+    }
 }
 
+function startGame() {
+    player1Deck();
+    player2Deck();
+    player3Deck();
+    player4Deck();
+    viras();
+    roundRuleSettings();
+    onPlayer1Turn();
+
+}
 startGame();
