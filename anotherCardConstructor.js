@@ -173,7 +173,7 @@ function viras() {
 
 let allCardsInGame = document.getElementsByClassName('card');
 
-function roundRuleSettings() {  
+function roundRuleSettings() {
     for (let i = 0; i < 11; i++) {
         if (vira.dataset.id == allCardsInGame[i].dataset.id) {
             if (allCardsInGame[i].dataset.naipe == 'ouros') {
@@ -199,34 +199,42 @@ function throwCard(id) {
     let cardThrowed = document.getElementById(id);
     removeCard(cardThrowed);
     cardThrowed = cardThrowed.dataset.value;
-    cardsOnTable.push(cardThrowed);
+    cardsOnTable.push(parseInt(cardThrowed));
     playerTurn += 1;
     if (playerTurn === 4) {
-        whoWin();
+        if (cardsOnTable[0] > cardsOnTable[1] &&
+            cardsOnTable[0] > cardsOnTable[2] &&
+            cardsOnTable[0] > cardsOnTable[3]) {
+            roundConditions(1);
+            return;
+        }
+        if (cardsOnTable[1] > cardsOnTable[0] &&
+            cardsOnTable[1] > cardsOnTable[2] &&
+            cardsOnTable[1] > cardsOnTable[3]) {
+            roundConditions(2);
+            return;
+        }
+        if (cardsOnTable[2] > cardsOnTable[0] &&
+            cardsOnTable[2] > cardsOnTable[1] &&
+            cardsOnTable[2] > cardsOnTable[3]) {
+            roundConditions(3);
+            return;
+        }
+        if (cardsOnTable[3] > cardsOnTable[0] &&
+            cardsOnTable[3] > cardsOnTable[1] &&
+            cardsOnTable[3] > cardsOnTable[2]) {
+            roundConditions(4);
+            return;
+        }
     }
 }
 
-function whoWin() {
-    if (cardsOnTable[0] > cardsOnTable[1] && cardsOnTable[2] && cardsOnTable[3]) {
-        roundConditions(1);
-    }
-    if (cardsOnTable[1] > cardsOnTable[0] && cardsOnTable[2] && cardsOnTable[3]) {
-        roundConditions(2);
-    }
-    if (cardsOnTable[2] > cardsOnTable[0] && cardsOnTable[1] && cardsOnTable[3]) {
-        roundConditions(3);
-    }
-    if (cardsOnTable[3] > cardsOnTable[0] && cardsOnTable[1] && cardsOnTable[2]) {
-        roundConditions(4);
-    }
-    //<debug>
-    debugger;
-    //</debug>
-    
-}
 
 function roundConditions(op) {
+    console.log(cardsOnTable);
     playerTurn = 0;
+    cardsOnTable = []
+    console.log(cardsOnTable);
     switch (op) {
         case 1: //vitoria jogador 1
             console.log("vitoraP1");
@@ -362,6 +370,10 @@ function onPlayer4Turn() {
     card1P4.disabled = false;
     card2P4.disabled = false;
     card3P4.disabled = false;
+
+    card1P3.addEventListener('click', onPlayer1Turn);
+    card2P3.addEventListener('click', onPlayer1Turn);
+    card3P3.addEventListener('click', onPlayer1Turn);
 }
 
 startGame();
