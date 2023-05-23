@@ -219,56 +219,77 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
         if (cardsOnTable[0] > cardsOnTable[1] &&
             cardsOnTable[0] > cardsOnTable[2] &&
             cardsOnTable[0] > cardsOnTable[3]) {
-            roundConditions(1);
+            roundConditions(1, 1);
             return;
         }
         if (cardsOnTable[1] > cardsOnTable[0] &&
             cardsOnTable[1] > cardsOnTable[2] &&
             cardsOnTable[1] > cardsOnTable[3]) {
-            roundConditions(2);
+            roundConditions(1, 2);
             return;
         }
         if (cardsOnTable[2] > cardsOnTable[0] &&
             cardsOnTable[2] > cardsOnTable[1] &&
             cardsOnTable[2] > cardsOnTable[3]) {
-            roundConditions(3);
+            roundConditions(1, 3);
             return;
         }
         if (cardsOnTable[3] > cardsOnTable[0] &&
             cardsOnTable[3] > cardsOnTable[1] &&
             cardsOnTable[3] > cardsOnTable[2]) {
-            roundConditions(4);
+            roundConditions(1, 4);
             return;
+        }
+        for (let i = 0; i < cardsOnTable.length; i++) {
+            for (let j = i + 1; j < cardsOnTable.length; j++) {
+                if (cardsOnTable[i] === cardsOnTable[j]) {
+                    let maiorItem = cardsOnTable[i];
+                    //<debug>
+                    debugger;
+                    //</debug>
+
+                    let posicaoMaiorItem = cardsOnTable.indexOf(maiorItem);
+                    switch (posicaoMaiorItem) {
+                        case 0:
+                            posicaoMaiorItem = 1;
+                            break;
+                        case 1:
+                            posicaoMaiorItem = 2;
+                            break;
+                        case 2:
+                            posicaoMaiorItem = 3;
+                            break;
+                        case 3:
+                            posicaoMaiorItem = 4;
+                            break;
+                    }
+                    roundConditions(2, posicaoMaiorItem);
+                    return;
+                }
+            }
         }
     }
     nextPlayerTurn(IdNextPlayerTurn);
 }
 
 
-function roundConditions(op) {
+function roundConditions(op, IdNextPlayerTurn) {
+    //<debug>
+    debugger;
+    //</debug>
+
     console.log(cardsOnTable);
     playerTurn = 0;
     cardsOnTable = [p1, p2, p3, p4]
     switch (op) {
-        case 1: //vitoria jogador 1
-            console.log("vitoraP1");
-            nextPlayerTurn(1);
+        case 1: //vitoria jogador
+            console.log("vitoraP" + IdNextPlayerTurn);
+            nextPlayerTurn(IdNextPlayerTurn);
             break;
-        case 2: //vitoria jogador 2
-            console.log("vitoraP2");
-            nextPlayerTurn(2);
+        case 2: //empate
+            console.log("empate");
+            nextPlayerTurn(IdNextPlayerTurn);
             break;
-        case 3: //vitoria jogador 3
-            console.log("vitoraP3");
-            nextPlayerTurn(3);
-            break;
-        case 4: //vitoria jogador 4
-            console.log("vitoraP4");
-            nextPlayerTurn(4);
-            break;
-        /* case 5: //empate
-            console.log("vitoraP4");
-            break; */
     }
 }
 
