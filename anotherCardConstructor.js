@@ -173,7 +173,7 @@ let allCardsInGame = document.getElementsByClassName('card');
 
 function roundRuleSettings() {
     for (let i = 0; i < 11; i++) {
-        if (vira.dataset.id == allCardsInGame[i].dataset.id) {
+        if (vira.dataset.id == allCardsInGame[i].dataset.id +1) {
             if (allCardsInGame[i].dataset.naipe == 'ouros') {
                 allCardsInGame[i].dataset.value = ouros;
             }
@@ -240,33 +240,32 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
             roundConditions(1, 4);
             return;
         }
+        let posicaoMaiorItem = -1; // Initialize posicaoMaiorItem with an invalid index
+
         for (let i = 0; i < cardsOnTable.length; i++) {
             for (let j = i + 1; j < cardsOnTable.length; j++) {
                 if (cardsOnTable[i] === cardsOnTable[j]) {
-                    let maiorItem = cardsOnTable[i];
-                    //<debug>
-                    debugger;
-                    //</debug>
-
-                    let posicaoMaiorItem = cardsOnTable.indexOf(maiorItem);
-                    switch (posicaoMaiorItem) {
-                        case 0:
-                            posicaoMaiorItem = 1;
-                            break;
-                        case 1:
-                            posicaoMaiorItem = 2;
-                            break;
-                        case 2:
-                            posicaoMaiorItem = 3;
-                            break;
-                        case 3:
-                            posicaoMaiorItem = 4;
-                            break;
-                    }
-                    roundConditions(2, posicaoMaiorItem);
-                    return;
+                    posicaoMaiorItem = j; // Update posicaoMaiorItem with the index of the larger item
                 }
             }
+        }
+        if (posicaoMaiorItem !== -1) {
+            switch (posicaoMaiorItem) {
+                case 0:
+                    posicaoMaiorItem = 1;
+                    break;
+                case 1:
+                    posicaoMaiorItem = 2;
+                    break;
+                case 2:
+                    posicaoMaiorItem = 3;
+                    break;
+                case 3:
+                    posicaoMaiorItem = 4;
+                    break;
+            }
+            roundConditions(2, posicaoMaiorItem);
+            return;
         }
     }
     nextPlayerTurn(IdNextPlayerTurn);
