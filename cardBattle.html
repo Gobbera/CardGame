@@ -8,33 +8,59 @@
     <title>Document</title>
 </head>
 <body style="display: flex; margin: 0; padding: 0; height: 100vh; width: 100vw;">
-    <div id="player1" style="background-color: rgb(235, 4, 4); bottom: 10px; left: 40%; position: absolute;">
+    <div id="player1" style="background-color: rgb(235, 4, 4); bottom: 10px; left: 40%; position: absolute; display: flex;">
         <label for="">Jogador1</label>
-        <button class="card" id="card1P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card1P1);">card1</button>
-        <button class="card" id="card2P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card2P1);">card2</button>
-        <button class="card" id="card3P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card3P1);">card3</button>
+        <div>
+            <button class="card" id="card1P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card1P1);">card1</button>
+        </div>
+        <div>
+            <button class="card" id="card2P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card2P1);">card2</button>
+        </div>
+        <div>
+            <button class="card" id="card3P1" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card3P1);">card3</button>
+        </div>
     </div>
-    <div id="player2" style="background-color: rgb(253, 236, 0); bottom: 45%; right: 10px; position: absolute;">
+    <div id="player2" style="background-color: rgb(253, 236, 0); bottom: 45%; right: 10px; position: absolute; display: flex;">
         <label for="">Jogador2</label>
-        <button class="card" id="card1P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card1P2);">card1</button>
-        <button class="card" id="card2P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card2P2);">card2</button>
-        <button class="card" id="card3P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card3P2);">card3</button>
+        <div>
+            <button class="card onRightSide" id="card1P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card1P2);">card1</button>
+        </div>
+        <div>
+            <button class="card onRightSide" id="card2P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card2P2);">card2</button>
+        </div>
+        <div>
+            <button class="card onRightSide" id="card3P2" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card3P2);">card3</button>
+        </div>
     </div>
-    <div id="player3" style="background-color: rgb(38, 0, 253); top: 10px; left: 40%; position: absolute;">
+    <div id="player3" style="background-color: rgb(38, 0, 253); top: 10px; left: 40%; position: absolute; display: flex;">
         <label for="">Jogador3</label>
-        <button class="card" id="card1P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card1P3)">card1</button>
-        <button class="card" id="card2P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card2P3)">card2</button>
-        <button class="card" id="card3P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card3P3)">card3</button>
+        <div>
+            <button class="card" id="card1P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card1P3)">card1</button>
+        </div>
+        <div>
+            <button class="card" id="card2P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card2P3)">card2</button>
+        </div>
+        <div>
+            <button class="card" id="card3P3" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card3P3)">card3</button>
+        </div>
     </div>
-    <div id="player4" style="background-color: rgb(11, 199, 74); bottom: 45%; left: 10px; position: absolute;">
+    <div id="player4" style="background-color: rgb(11, 199, 74); bottom: 45%; left: 10px; position: absolute; display: flex;">
         <label for="">Jogador4</label>
-        <button class="card" id="card1P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card1P4)">card1</button>
-        <button class="card" id="card2P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card2P4)">card2</button>
-        <button class="card" id="card3P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card3P4)">card3</button>
+        <div>
+            <button class="card onLeftSide" id="card1P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card1P4)">card1</button>
+        </div>
+        <div>
+            <button class="card onLeftSide" id="card2P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card2P4)">card2</button>
+        </div>
+        <div>
+            <button class="card onLeftSide" id="card3P4" data-value="" data-id="" data-naipe="" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card3P4)">card3</button>
+        </div>
     </div>
-    <div style="bottom: 50%; left: 45%; position: absolute;">
-        <span style="background-color: rgb(90, 48, 126);">Vira</span>
-        <span class="card" id="vira" data-value="" data-id="" data-naipe="">Vira</span>
+    <div style="background-color: rgb(90, 48, 126); top: 41%; left: 47%; position: absolute;">
+        <div class="card">
+            <span id="vira" data-value="" data-id="" data-naipe="">Vira</span>
+            <img class="naipe" src="" alt="" style="width: 16px; height: 16px">
+        </div>
     </div>
     <div id="playerTurnIndicator" style="bottom: 15%; left: 12%; position: absolute;">
         <span>Vez de:</span>
