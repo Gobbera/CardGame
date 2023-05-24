@@ -172,8 +172,11 @@ function viras() {
 let allCardsInGame = document.getElementsByClassName('card');
 
 function roundRuleSettings() {
+    let virass = parseInt(vira.dataset.id);
+    virass += 1;
+    if (virass === 11) { virass = 1;}
     for (let i = 0; i < 11; i++) {
-        if (vira.dataset.id == allCardsInGame[i].dataset.id +1) {
+        if (virass == parseInt(allCardsInGame[i].dataset.id)) {
             if (allCardsInGame[i].dataset.naipe == 'ouros') {
                 allCardsInGame[i].dataset.value = ouros;
             }
