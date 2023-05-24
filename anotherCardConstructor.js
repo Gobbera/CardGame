@@ -96,16 +96,19 @@ function getCard() {
 function player1Deck() {
     getCard();
     card1P1.innerText = card.Name + ' ' + card.naipe;
+    card1P1.dataset.name = card.Name;
     card1P1.dataset.value = card.value;
     card1P1.dataset.naipe = card.naipe;
     card1P1.dataset.id = card.id;
     getCard();
     card2P1.innerText = card.Name + ' ' + card.naipe;
+    card2P1.dataset.name = card.Name;
     card2P1.dataset.value = card.value;
     card2P1.dataset.naipe = card.naipe;
     card2P1.dataset.id = card.id;
     getCard();
     card3P1.innerText = card.Name + ' ' + card.naipe;
+    card3P1.dataset.name = card.Name;
     card3P1.dataset.value = card.value;
     card3P1.dataset.naipe = card.naipe;
     card3P1.dataset.id = card.id;
@@ -113,16 +116,19 @@ function player1Deck() {
 function player2Deck() {
     getCard();
     card1P2.innerText = card.Name + ' ' + card.naipe;
+    card1P2.dataset.name = card.Name;
     card1P2.dataset.value = card.value;
     card1P2.dataset.naipe = card.naipe;
     card1P2.dataset.id = card.id;
     getCard();
     card2P2.innerText = card.Name + ' ' + card.naipe;
+    card2P2.dataset.name = card.Name;
     card2P2.dataset.value = card.value;
     card2P2.dataset.naipe = card.naipe;
     card2P2.dataset.id = card.id;
     getCard();
     card3P2.innerText = card.Name + ' ' + card.naipe;
+    card3P2.dataset.name = card.Name;
     card3P2.dataset.value = card.value;
     card3P2.dataset.naipe = card.naipe;
     card3P2.dataset.id = card.id;
@@ -130,16 +136,19 @@ function player2Deck() {
 function player3Deck() {
     getCard();
     card1P3.innerText = card.Name + ' ' + card.naipe;
+    card1P3.dataset.name = card.Name;
     card1P3.dataset.value = card.value;
     card1P3.dataset.naipe = card.naipe;
     card1P3.dataset.id = card.id;
     getCard();
     card2P3.innerText = card.Name + ' ' + card.naipe;
+    card2P3.dataset.name = card.Name;
     card2P3.dataset.value = card.value;
     card2P3.dataset.naipe = card.naipe;
     card2P3.dataset.id = card.id;
     getCard();
     card3P3.innerText = card.Name + ' ' + card.naipe;
+    card3P3.dataset.name = card.Name;
     card3P3.dataset.value = card.value;
     card3P3.dataset.naipe = card.naipe;
     card3P3.dataset.id = card.id;
@@ -147,16 +156,19 @@ function player3Deck() {
 function player4Deck() {
     getCard();
     card1P4.innerText = card.Name + ' ' + card.naipe;
+    card1P4.dataset.name = card.Name;
     card1P4.dataset.value = card.value;
     card1P4.dataset.naipe = card.naipe;
     card1P4.dataset.id = card.id;
     getCard();
     card2P4.innerText = card.Name + ' ' + card.naipe;
+    card2P4.dataset.name = card.Name;
     card2P4.dataset.value = card.value;
     card2P4.dataset.naipe = card.naipe;
     card2P4.dataset.id = card.id;
     getCard();
     card3P4.innerText = card.Name + ' ' + card.naipe;
+    card3P4.dataset.name = card.Name;
     card3P4.dataset.value = card.value;
     card3P4.dataset.naipe = card.naipe;
     card3P4.dataset.id = card.id;
@@ -243,12 +255,12 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
             roundConditions(1, 4);
             return;
         }
-        let posicaoMaiorItem = -1; // Initialize posicaoMaiorItem with an invalid index
+        let posicaoMaiorItem = -1;
 
         for (let i = 0; i < cardsOnTable.length; i++) {
             for (let j = i + 1; j < cardsOnTable.length; j++) {
                 if (cardsOnTable[i] === cardsOnTable[j]) {
-                    posicaoMaiorItem = j; // Update posicaoMaiorItem with the index of the larger item
+                    posicaoMaiorItem = j; 
                 }
             }
         }
@@ -276,10 +288,6 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
 
 
 function roundConditions(op, IdNextPlayerTurn) {
-    //<debug>
-    debugger;
-    //</debug>
-
     console.log(cardsOnTable);
     playerTurn = 0;
     cardsOnTable = [p1, p2, p3, p4]
@@ -387,6 +395,29 @@ function nextPlayerTurn(IdNextPlayerTurn) {
             break;
     }
 }
+
+const cardThrowedViewP1 = document.getElementById('cardThrowedViewP1');
+const cardThrowedViewP2 = document.getElementById('cardThrowedViewP2');
+const cardThrowedViewP3 = document.getElementById('cardThrowedViewP3');
+const cardThrowedViewP4 = document.getElementById('cardThrowedViewP4');
+
+function showLastCardThrowedOnTableP1 (card) {
+    cardThrowedViewP1.innerText = card.dataset.name + ' ' + card.dataset.naipe;
+    
+}
+function showLastCardThrowedOnTableP2 (card) {
+    cardThrowedViewP2.innerText = card.dataset.name + ' ' + card.dataset.naipe;
+    
+}
+function showLastCardThrowedOnTableP3 (card) {
+    cardThrowedViewP3.innerText = card.dataset.name + ' ' + card.dataset.naipe;
+    
+}
+function showLastCardThrowedOnTableP4 (card) {
+    cardThrowedViewP4.innerText = card.dataset.name + ' ' + card.dataset.naipe;
+    
+}
+
 
 function startGame() {
     player1Deck();
