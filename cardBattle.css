@@ -4,19 +4,60 @@ button {
 }
 
 .card {
+    background-color: rgb(250, 250, 235);
+    border: 1px solid rgb(170, 170, 170);
     border-radius: 4px;
-    border: 1px solid black;
-    width: 96px;
-    height: 128px;
-    padding: 4px;
+    height: 136px;
+    width: 110px;
     display: flex;
+    -webkit-box-shadow: 2px 2px 3px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 3px -2px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 3px -2px rgba(0,0,0,0.75);
 }
 
-.naipe {
+.card-value {
     position: absolute;
-    left: 8px;
-    top: 32px;
+    left: 4px;
+    top: 2px;
+}
+
+.card-naipe {
+    position: absolute;
+    left: 2px;
+    top: 22px;
     background-color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.cardDesing {
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 4px;
+    height: 92px;
+    width: 72px;
+    position: absolute;
+    align-self: center;
+    left: 19px;
+}
+
+.naipe-inverted {
+    transform: rotate(180deg);
+    background-color: red;
+    position: absolute;
+    right: 2px;
+    bottom: 22px;
+}
+.value-inverted {
+    transform: rotate(180deg);
+    right: 4px;
+    bottom: 2px;
+}
+
+.naipe-middle {
+    position: absolute;
+    background-color: red;
+    left: 48px;
+    align-self: center;
 }
 
 .onRightSide {
