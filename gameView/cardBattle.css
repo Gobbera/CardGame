@@ -59,6 +59,13 @@ button {
     align-self: center;
 }
 
+.redColor {
+    color: red;
+}
+.blackColor {
+    color: black;
+}
+
 .onRightSide {
     
 }
