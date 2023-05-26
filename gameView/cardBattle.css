@@ -43,6 +43,14 @@ button {
     align-self: center;
     left: 19px;
 }
+.drawledCard {
+    position: absolute;
+    height: 92px;
+    width: 72px;
+    align-self: center;
+    left: 18%;
+    border-radius: 4px;
+}
 
 .naipe-inverted {
     transform: rotate(180deg);

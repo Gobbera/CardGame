@@ -8,6 +8,7 @@ const seteSketch = document.getElementById('seteSketch');
 const oitoSketch = document.getElementById('oitoSketch');
 const noveSketch = document.getElementById('noveSketch');
 const dezSketch = document.getElementById('dezSketch');
+const kingSketch = document.getElementById('kingSketch');
 
 let cardValueColor = "redColor";
 let naipeImage = "/images/naipes/Naipe_copas.png";
@@ -102,6 +103,10 @@ function chooseNaipesQuantityOnValue(op) {
             <img class="naipe-default" src="${naipeImage}" alt="${naipeImageAlt}" style="left: 48px; top: 30%;"></img>
             <img class="naipe-default naipe-inverted" src="${naipeImage}" alt="${naipeImageAlt}" style="left: 48px; bottom: 30%;"></img>
             <img class="naipe-default naipe-inverted" src="${naipeImage}" alt="${naipeImageAlt}" style="right: 26px; bottom: 35%;"></img>`
+            break;
+        case 13:
+            naipesOnValueQuantity = 
+            `<img class="drawledCard" src="/images/naipes/King_Naipe_ouros.png" alt="${naipeImageAlt}"></img>`
             break;
     }
 }
@@ -275,6 +280,23 @@ dezCard.innerHTML =
     ${naipesOnValueQuantity}
 </div>`;
 dezSketch.insertAdjacentElement("beforeend", dezCard.firstChild);
+
+//----------------------------------------------------------------------------------------------------------------------------------------//
+
+naipesOnValueQuantity = 13;
+chooseNaipesQuantityOnValue(naipesOnValueQuantity);
+const kingCard = document.createElement('div');
+
+kingCard.innerHTML =
+`<div class="card" style="position: absolute;"">
+    <span class="card-value ${cardValueColor}" data-value="" data-naipe="">10</span>
+    <img class="naipe-default card-naipe" src="${naipeImage}" alt="${naipeImageAlt}" style="width: 16px; height: 18px">
+    <span class="cardDesing"></span>
+    <span class="card-value ${cardValueColor} value-inverted" id="vira" data-value="" data-id="" data-naipe="">10</span>
+    <img class="naipe-default naipe-inverted" src="${naipeImage}" alt="${naipeImageAlt}" style="width: 16px; height: 18px">
+    ${naipesOnValueQuantity}
+</div>`;
+kingSketch.insertAdjacentElement("beforeend", kingCard.firstChild);
 
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
