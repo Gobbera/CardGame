@@ -21,14 +21,17 @@ button {
     top: 2px;
 }
 
-.card-naipe {
+.naipe-default {
     position: absolute;
-    left: 2px;
-    top: 22px;
     padding: 0;
     margin: 0;
     width: 16px;
     height: 18px;
+}
+
+.card-naipe {
+    left: 2px;
+    top: 22px;
 }
 
 .cardDesing {
