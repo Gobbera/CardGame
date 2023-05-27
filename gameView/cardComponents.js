@@ -13,6 +13,7 @@ const queenSketch = document.getElementById('queenSketch');
 const kingSketch = document.getElementById('kingSketch');
 
 let cardValueColor = "redColor";
+let naipe = "ouros";
 let naipeImage;
 let naipeImageAlt;
 let naipesOnValueQuantity;
@@ -115,7 +116,7 @@ function chooseNaipesQuantityOnValue(op, naipeImage, royalityClass) {
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 1;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 
 const asCard = document.createElement('div');
@@ -133,7 +134,7 @@ asSketch.insertAdjacentElement("beforeend", asCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
     
 naipesOnValueQuantity = 2;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const doisCard = document.createElement('div');
 
@@ -151,7 +152,7 @@ doisSketch.insertAdjacentElement("beforeend", doisCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 3;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const tresCard = document.createElement('div');
 
@@ -169,7 +170,7 @@ tresSketch.insertAdjacentElement("beforeend", tresCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 4;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const quatroCard = document.createElement('div');
 
@@ -187,7 +188,7 @@ quatroSketch.insertAdjacentElement("beforeend", quatroCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 5;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const cincoCard = document.createElement('div');
 
@@ -205,7 +206,7 @@ cincoSketch.insertAdjacentElement("beforeend", cincoCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 6;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const seisCard = document.createElement('div');
 
@@ -223,7 +224,7 @@ seisSketch.insertAdjacentElement("beforeend", seisCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 7;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const seteCard = document.createElement('div');
 
@@ -241,7 +242,7 @@ seteSketch.insertAdjacentElement("beforeend", seteCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 8;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const oitoCard = document.createElement('div');
 
@@ -259,7 +260,7 @@ oitoSketch.insertAdjacentElement("beforeend", oitoCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 9;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const noveCard = document.createElement('div');
 
@@ -277,7 +278,7 @@ noveSketch.insertAdjacentElement("beforeend", noveCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 10;
-naipeImage = '/images/naipes/Naipe_ouros.png';
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage);
 const dezCard = document.createElement('div');
 
@@ -295,8 +296,8 @@ dezSketch.insertAdjacentElement("beforeend", dezCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 11;
-naipeImage = '/images/naipes/Naipe_ouros.png';
-royalityClass = '/images/naipes/Jack_Naipe_ouros.png'
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
+royalityClass = `/images/naipes/King_Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass);
 const jackCard = document.createElement('div');
 
@@ -314,8 +315,8 @@ jackSketch.insertAdjacentElement("beforeend", jackCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 11;
-naipeImage = '/images/naipes/Naipe_ouros.png';
-royalityClass = '/images/naipes/Queen_Naipe_ouros.png'
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
+royalityClass = `/images/naipes/King_Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass);
 const queenCard = document.createElement('div');
 
@@ -333,8 +334,8 @@ queenSketch.insertAdjacentElement("beforeend", queenCard.firstChild);
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
 naipesOnValueQuantity = 11;
-naipeImage = '/images/naipes/Naipe_ouros.png';
-royalityClass = '/images/naipes/King_Naipe_ouros.png'
+naipeImage = `/images/naipes/Naipe_${naipe}.png`;
+royalityClass = `/images/naipes/King_Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass);
 const kingCard = document.createElement('div');
 
