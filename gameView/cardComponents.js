@@ -13,7 +13,7 @@ const queenSketch = document.getElementById('queenSketch');
 const kingSketch = document.getElementById('kingSketch');
 
 let cardValueColor = "redColor";
-let naipe = "ouros";
+let naipe = "copas";
 let naipeImage;
 let naipeImageAlt;
 let naipesOnValueQuantity;
@@ -297,7 +297,7 @@ dezSketch.insertAdjacentElement("beforeend", dezCard.firstChild);
 
 naipesOnValueQuantity = 11;
 naipeImage = `/images/naipes/Naipe_${naipe}.png`;
-royalityClass = `/images/naipes/King_Naipe_${naipe}.png`;
+royalityClass = `/images/naipes/Jack_Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass);
 const jackCard = document.createElement('div');
 
@@ -316,7 +316,7 @@ jackSketch.insertAdjacentElement("beforeend", jackCard.firstChild);
 
 naipesOnValueQuantity = 11;
 naipeImage = `/images/naipes/Naipe_${naipe}.png`;
-royalityClass = `/images/naipes/King_Naipe_${naipe}.png`;
+royalityClass = `/images/naipes/Queen_Naipe_${naipe}.png`;
 chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass);
 const queenCard = document.createElement('div');
 
