@@ -19,7 +19,7 @@ const player2 = document.getElementById('player2');
 const player3 = document.getElementById('player3');
 const player4 = document.getElementById('player4');
 
-const vira = document.getElementById('vira');
+const viraContainer = document.getElementById('viraContainer');
 
 const ouros = 100;
 const espadas = 1000;
@@ -115,26 +115,116 @@ function getCard() {
 
 function player1Deck() {
     getCard();
+    card1P1.innerText = card.Name + ' ' + card.naipe;
+    card1P1.dataset.name = card.Name;
+    card1P1.dataset.value = card.value;
+    card1P1.dataset.naipe = card.naipe;
+    card1P1.dataset.id = card.id;
     card1P1.innerHTML = naipesOnValueQuantity;
     player1.insertAdjacentElement("beforeend", card1P1);
     getCard();
+    card2P1.innerText = card.Name + ' ' + card.naipe;
+    card2P1.dataset.name = card.Name;
+    card2P1.dataset.value = card.value;
+    card2P1.dataset.naipe = card.naipe;
+    card2P1.dataset.id = card.id;
     card2P1.innerHTML = naipesOnValueQuantity;
     player1.insertAdjacentElement("beforeend", card2P1);
     getCard();
+    card3P1.innerText = card.Name + ' ' + card.naipe;
+    card3P1.dataset.name = card.Name;
+    card3P1.dataset.value = card.value;
+    card3P1.dataset.naipe = card.naipe;
+    card3P1.dataset.id = card.id;
     card3P1.innerHTML = naipesOnValueQuantity;
     player1.insertAdjacentElement("beforeend", card3P1);
-    
 }
 function player2Deck() {
-
+    getCard();
+    card1P2.innerText = card.Name + ' ' + card.naipe;
+    card1P2.dataset.name = card.Name;
+    card1P2.dataset.value = card.value;
+    card1P2.dataset.naipe = card.naipe;
+    card1P2.dataset.id = card.id;
+    card1P2.innerHTML = naipesOnValueQuantity;
+    player2.insertAdjacentElement("beforeend", card1P2);
+    getCard();
+    card2P2.innerText = card.Name + ' ' + card.naipe;
+    card2P2.dataset.name = card.Name;
+    card2P2.dataset.value = card.value;
+    card2P2.dataset.naipe = card.naipe;
+    card2P2.dataset.id = card.id;
+    card2P2.innerHTML = naipesOnValueQuantity;
+    player2.insertAdjacentElement("beforeend", card2P2);
+    getCard();
+    card3P2.innerText = card.Name + ' ' + card.naipe;
+    card3P2.dataset.name = card.Name;
+    card3P2.dataset.value = card.value;
+    card3P2.dataset.naipe = card.naipe;
+    card3P2.dataset.id = card.id;
+    card3P2.innerHTML = naipesOnValueQuantity;
+    player2.insertAdjacentElement("beforeend", card3P2);
 }
 function player3Deck() {
+    getCard();
+    card1P3.innerText = card.Name + ' ' + card.naipe;
+    card1P3.dataset.name = card.Name;
+    card1P3.dataset.value = card.value;
+    card1P3.dataset.naipe = card.naipe;
+    card1P3.dataset.id = card.id;
+    card1P3.innerHTML = naipesOnValueQuantity;
+    player3.insertAdjacentElement("beforeend", card1P3);
+    getCard();
+    card2P3.innerText = card.Name + ' ' + card.naipe;
+    card2P3.dataset.name = card.Name;
+    card2P3.dataset.value = card.value;
+    card2P3.dataset.naipe = card.naipe;
+    card2P3.dataset.id = card.id;
+    card2P3.innerHTML = naipesOnValueQuantity;
+    player3.insertAdjacentElement("beforeend", card2P3);
+    getCard();
+    card3P3.innerText = card.Name + ' ' + card.naipe;
+    card3P3.dataset.name = card.Name;
+    card3P3.dataset.value = card.value;
+    card3P3.dataset.naipe = card.naipe;
+    card3P3.dataset.id = card.id;
+    card3P3.innerHTML = naipesOnValueQuantity;
+    player3.insertAdjacentElement("beforeend", card3P3);
 
 }
 function player4Deck() {
-
+    getCard();
+    card1P4.innerText = card.Name + ' ' + card.naipe;
+    card1P4.dataset.name = card.Name;
+    card1P4.dataset.value = card.value;
+    card1P4.dataset.naipe = card.naipe;
+    card1P4.dataset.id = card.id;
+    card1P4.innerHTML = naipesOnValueQuantity;
+    player4.insertAdjacentElement("beforeend", card1P4);
+    getCard();
+    card2P4.innerText = card.Name + ' ' + card.naipe;
+    card2P4.dataset.name = card.Name;
+    card2P4.dataset.value = card.value;
+    card2P4.dataset.naipe = card.naipe;
+    card2P4.dataset.id = card.id;
+    card2P4.innerHTML = naipesOnValueQuantity;
+    player4.insertAdjacentElement("beforeend", card2P4);
+    getCard();
+    card3P4.innerText = card.Name + ' ' + card.naipe;
+    card3P4.dataset.name = card.Name;
+    card3P4.dataset.value = card.value;
+    card3P4.dataset.naipe = card.naipe;
+    card3P4.dataset.id = card.id;
+    card3P4.innerHTML = naipesOnValueQuantity;
+    player4.insertAdjacentElement("beforeend", card3P4);
 }
 function viras() {
+    getCard();
+    vira.innerText = card.Name + ' ' + card.naipe;
+    vira.dataset.value = card.value;
+    vira.dataset.id = card.id;
+    vira.innerHTML = naipesOnValueQuantity;
+    viraContainer.insertAdjacentElement("beforeend", vira);
 }
 
 
