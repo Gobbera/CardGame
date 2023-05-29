@@ -1,10 +1,6 @@
+/* 
 
 
-let cardValueColor = "redColor";
-let naipe = "copas";
-let naipeImage;
-let naipeImageAlt;
-let naipesOnValueQuantity;
 
 
 function chooseNaipesQuantityOnValue(op, naipeImage, royalityClass) {
@@ -277,3 +273,4 @@ kingSketch.insertAdjacentElement("beforeend", kingCard.firstChild);
 
 //----------------------------------------------------------------------------------------------------------------------------------------//
 
+ */
