@@ -19,6 +19,8 @@ const player2 = document.getElementById('player2');
 const player3 = document.getElementById('player3');
 const player4 = document.getElementById('player4');
 
+const vira = document.getElementById('vira');
+
 const viraContainer = document.getElementById('viraContainer');
 
 const ouros = 100;
