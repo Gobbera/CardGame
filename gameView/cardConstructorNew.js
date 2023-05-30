@@ -370,7 +370,7 @@ function nextPlayerTurn(IdNextPlayerTurn) {
             card2P1.disabled = false;
             card3P1.disabled = false;
 
-            card1P2.disabled = true;
+            card1P2.style.pointerEvents = 'none';
             card2P2.disabled = true;
             card3P2.disabled = true;
 
