@@ -366,78 +366,35 @@ function nextPlayerTurn(IdNextPlayerTurn) {
         case 1:
             playerTurnIndicator.innerText = 'Vez de ' + 'jogador 1';
 
-            card1P1.disabled = false;
-            card2P1.disabled = false;
-            card3P1.disabled = false;
-
-            card1P2.style.pointerEvents = 'none';
-            card2P2.disabled = true;
-            card3P2.disabled = true;
-
-            card1P3.disabled = true;
-            card2P3.disabled = true;
-            card3P3.disabled = true;
-
-            card1P4.disabled = true;
-            card2P4.disabled = true;
-            card3P4.disabled = true;
+            player1.style.pointerEvents = 'auto';
+            player2.style.pointerEvents = 'none';
+            player3.style.pointerEvents = 'none';
+            player4.style.pointerEvents = 'none';
             break;
         case 2:
             playerTurnIndicator.innerText = 'Vez de ' + 'jogador 2';
 
-            card1P1.disabled = true;
-            card2P1.disabled = true;
-            card3P1.disabled = true;
-
-            card1P2.disabled = false;
-            card2P2.disabled = false;
-            card3P2.disabled = false;
-
-            card1P3.disabled = true;
-            card2P3.disabled = true;
-            card3P3.disabled = true;
-
-            card1P4.disabled = true;
-            card2P4.disabled = true;
-            card3P4.disabled = true;
+            player1.style.pointerEvents = 'none';
+            player2.style.pointerEvents = 'auto';
+            player3.style.pointerEvents = 'none';
+            player4.style.pointerEvents = 'none';
             break;
         case 3:
             playerTurnIndicator.innerText = 'Vez de ' + 'jogador 3';
 
-            card1P1.disabled = true;
-            card2P1.disabled = true;
-            card3P1.disabled = true;
-
-            card1P2.disabled = true;
-            card2P2.disabled = true;
-            card3P2.disabled = true;
-
-            card1P3.disabled = false;
-            card2P3.disabled = false;
-            card3P3.disabled = false;
-
-            card1P4.disabled = true;
-            card2P4.disabled = true;
-            card3P4.disabled = true;
+            player1.style.pointerEvents = 'none';
+            player2.style.pointerEvents = 'none';
+            player3.style.pointerEvents = 'auto';
+            player4.style.pointerEvents = 'none';
             break;
         case 4:
             playerTurnIndicator.innerText = 'Vez de ' + 'jogador 4';
 
-            card1P1.disabled = true;
-            card2P1.disabled = true;
-            card3P1.disabled = true;
+            player1.style.pointerEvents = 'none';
+            player2.style.pointerEvents = 'none';
+            player3.style.pointerEvents = 'none';
+            player4.style.pointerEvents = 'auto';
 
-            card1P2.disabled = true;
-            card2P2.disabled = true;
-            card3P2.disabled = true;
-
-            card1P3.disabled = true;
-            card2P3.disabled = true;
-            card3P3.disabled = true;
-
-            card1P4.disabled = false;
-            card2P4.disabled = false;
-            card3P4.disabled = false;
             break;
     }
 }
