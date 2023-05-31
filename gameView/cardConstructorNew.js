@@ -394,7 +394,6 @@ function nextPlayerTurn(IdNextPlayerTurn) {
             player2.style.pointerEvents = 'none';
             player3.style.pointerEvents = 'none';
             player4.style.pointerEvents = 'auto';
-
             break;
     }
 }
@@ -403,10 +402,11 @@ const cardThrowedViewP1 = document.getElementById('cardThrowedViewP1');
 const cardThrowedViewP2 = document.getElementById('cardThrowedViewP2');
 const cardThrowedViewP3 = document.getElementById('cardThrowedViewP3');
 const cardThrowedViewP4 = document.getElementById('cardThrowedViewP4');
+const cardSlot1 = document.getElementById('cardSlot1');
 
 function showLastCardThrowedOnTableP1(card) {
-    cardThrowedViewP1.innerText = card.dataset.name + ' ' + card.dataset.naipe;
-
+    cardSlot1.innerHTML = card.innerHTML;
+    cardThrowedViewP1.insertAdjacentElement("beforeend", cardSlot1);
 }
 function showLastCardThrowedOnTableP2(card) {
     cardThrowedViewP2.innerText = card.dataset.name + ' ' + card.dataset.naipe;
