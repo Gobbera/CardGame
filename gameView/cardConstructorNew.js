@@ -237,26 +237,23 @@ function roundRuleSettings() {
     virass += 1;
     if (virass === 11) { virass = 1; }
     for (let i = 0; i < 11; i++) {
-        if (virass == parseInt(allCardsInGame[i].dataset.id)) {
-            if (allCardsInGame[i].dataset.naipe == 'ouros') {
-                allCardsInGame[i].dataset.value = ouros;
+        if (virass == parseInt(allCardsInGame[i].parentElement.dataset.id)) {
+            if (allCardsInGame[i].parentElement.dataset.naipe == 'ouros') {
+                allCardsInGame[i].parentElement.dataset.value = ouros;
             }
-            if (allCardsInGame[i].dataset.naipe == 'espadas') {
-                allCardsInGame[i].dataset.value = espadas;
+            if (allCardsInGame[i].parentElement.dataset.naipe == 'espadas') {
+                allCardsInGame[i].parentElement.dataset.value = espadas;
             }
-            if (allCardsInGame[i].dataset.naipe == 'copas') {
-                allCardsInGame[i].dataset.value = copas;
+            if (allCardsInGame[i].parentElement.dataset.naipe == 'copas') {
+                allCardsInGame[i].parentElement.dataset.value = copas;
             }
-            if (allCardsInGame[i].dataset.naipe == 'paus') {
-                allCardsInGame[i].dataset.value = paus;
+            if (allCardsInGame[i].parentElement.dataset.naipe == 'paus') {
+                allCardsInGame[i].parentElement.dataset.value = paus;
             }
         }
     }
 }
-let p1;
-let p2;
-let p3;
-let p4;
+let p1, p2, p3, p4;
 
 let cardsOnTable = [p1, p2, p3, p4];
 let playerTurn = 0;
@@ -403,22 +400,26 @@ const cardThrowedViewP2 = document.getElementById('cardThrowedViewP2');
 const cardThrowedViewP3 = document.getElementById('cardThrowedViewP3');
 const cardThrowedViewP4 = document.getElementById('cardThrowedViewP4');
 const cardSlot1 = document.getElementById('cardSlot1');
+const cardSlot2 = document.getElementById('cardSlot2');
+const cardSlot3 = document.getElementById('cardSlot3');
+const cardSlot4 = document.getElementById('cardSlot4');
 
 function showLastCardThrowedOnTableP1(card) {
     cardSlot1.innerHTML = card.innerHTML;
     cardThrowedViewP1.insertAdjacentElement("beforeend", cardSlot1);
 }
 function showLastCardThrowedOnTableP2(card) {
-    cardThrowedViewP2.innerText = card.dataset.name + ' ' + card.dataset.naipe;
-
+    cardSlot2.innerHTML = card.innerHTML;
+    cardThrowedViewP2.insertAdjacentElement("beforeend", cardSlot2);
 }
 function showLastCardThrowedOnTableP3(card) {
-    cardThrowedViewP3.innerText = card.dataset.name + ' ' + card.dataset.naipe;
-
+    cardSlot3.innerHTML = card.innerHTML;
+    cardThrowedViewP3.insertAdjacentElement("beforeend", cardSlot3);
+    
 }
 function showLastCardThrowedOnTableP4(card) {
-    cardThrowedViewP4.innerText = card.dataset.name + ' ' + card.dataset.naipe;
-
+    cardSlot4.innerHTML = card.innerHTML;
+    cardThrowedViewP4.insertAdjacentElement("beforeend", cardSlot4);
 }
 
 

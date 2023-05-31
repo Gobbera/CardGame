@@ -19,33 +19,33 @@
     </div>
     <div id="player2" style="bottom: 30%; right: 140px; position: absolute; display: flex; transform: rotate(-90deg);">
         <label for="" style="transform: rotate(90deg); background-color: rgb(253, 236, 0);">Jogador2</label>
-        <div id="card1P2" style="left: 100%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP1(card1P2);">
+        <div id="card1P2" style="left: 100%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card1P2);">
         </div>
-        <div id="card2P2" style="left: 200%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP1(card2P2);">
+        <div id="card2P2" style="left: 200%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card2P2);">
         </div>
-        <div id="card3P2" style="left: 300%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP1(card3P2);">
+        <div id="card3P2" style="left: 300%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card3P2);">
         </div>
     </div>
     <div id="player3" style="top: 162px; right: 37%; position: absolute; display: flex; transform: rotate(180deg);">
         <label for="" style="background-color: rgb(38, 0, 253); transform: rotate(180deg)">Jogador3</label>
-        <div id="card1P3" style="left: 100%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP1(card1P3);">
+        <div id="card1P3" style="left: 100%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card1P3);">
         </div>
-        <div id="card2P3" style="left: 200%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP1(card2P3);">
+        <div id="card2P3" style="left: 200%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card2P3);">
         </div>
-        <div id="card3P3" style="left: 300%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP1(card3P3);">
+        <div id="card3P3" style="left: 300%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card3P3);">
         </div>
     </div>
     <div id="player4" style="top: 30%; left: 140px; position: absolute; display: flex; transform: rotate(90deg);">
         <label for="" style="background-color: rgb(11, 199, 74); transform: rotate(-90deg);">Jogador4</label>
-        <div id="card1P4" style="left: 100%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP1(card1P4);">
+        <div id="card1P4" style="left: 100%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card1P4);">
         </div>
-        <div id="card2P4" style="left: 200%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP1(card2P4);">
+        <div id="card2P4" style="left: 200%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card2P4);">
         </div>
-        <div id="card3P4" style="left: 300%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP1(card3P4);">
+        <div id="card3P4" style="left: 300%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card3P4);">
         </div>
     </div>
     <div id="viraContainer" style="background-color: rgb(90, 48, 126); top: 37%; left: 47%; position: absolute; transform: rotate(11deg);">
-        <div id="vira" style="position: absolute;">
+        <div id="vira" data-value="" data-id="" data-naipe="" style="position: absolute;">
         </div>
     </div>
     <div id="playerTurnIndicator" style="bottom: 15%; left: 12%; position: absolute;">
@@ -54,15 +54,14 @@
     <div id="cardThrowedViewP1" class="card-slot" style="bottom: 25%; right: 30%;">
         <div id="cardSlot1"></div>
     </div>
-    <div>
-    <div id="cardThrowedViewP2" class="card" style="background-color: rgb(253, 236, 0); top: 30%; right: 20%; position: absolute;">
-        <span>CardP2</span>
+    <div id="cardThrowedViewP2" class="card-slot" style="top: 30%; right: 20%;">
+        <div id="cardSlot2"></div>
     </div>
-    <div  id="cardThrowedViewP3" class="card" style="background-color: rgb(38, 0, 253); top: 25%; left: 30%; position: absolute;">
-        <span>CardP3</span>
+    <div  id="cardThrowedViewP3" class="card-slot" style="top: 25%; left: 30%;">
+        <div id="cardSlot3"></div>
     </div>
-    <div  id="cardThrowedViewP4" class="card" style="background-color: rgb(11, 199, 74); bottom: 30%; left: 20%; position: absolute;">
-        <span>CardP4</span>
+    <div  id="cardThrowedViewP4" class="card-slot" style="bottom: 30%; left: 20%;">
+        <div id="cardSlot4"></div>
     </div>
 </body>
 <script src="cardConstructorNew.js"></script>
