@@ -227,6 +227,7 @@ function viras() {
     vira.dataset.id = card.id;
     vira.innerHTML = naipesOnValueQuantity;
     viraContainer.insertAdjacentElement("beforeend", vira);
+    vira.style.pointerEvents = 'none';
 }
 
 
@@ -407,19 +408,23 @@ const cardSlot4 = document.getElementById('cardSlot4');
 function showLastCardThrowedOnTableP1(card) {
     cardSlot1.innerHTML = card.innerHTML;
     cardThrowedViewP1.insertAdjacentElement("beforeend", cardSlot1);
+    cardThrowedViewP1.style.pointerEvents = 'none';
 }
 function showLastCardThrowedOnTableP2(card) {
     cardSlot2.innerHTML = card.innerHTML;
     cardThrowedViewP2.insertAdjacentElement("beforeend", cardSlot2);
+    cardThrowedViewP2.style.pointerEvents = 'none';
 }
 function showLastCardThrowedOnTableP3(card) {
     cardSlot3.innerHTML = card.innerHTML;
     cardThrowedViewP3.insertAdjacentElement("beforeend", cardSlot3);
+    cardThrowedViewP3.style.pointerEvents = 'none';
     
 }
 function showLastCardThrowedOnTableP4(card) {
     cardSlot4.innerHTML = card.innerHTML;
     cardThrowedViewP4.insertAdjacentElement("beforeend", cardSlot4);
+    cardThrowedViewP4.style.pointerEvents = 'none';
 }
 
 
