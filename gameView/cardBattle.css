@@ -95,3 +95,7 @@ button {
 .onLeftSide {
 
 }
+.toPositionOnTable {
+    transition: all 0.2s ease-in-out;
+    transform: translate(100px, -40px);
+}

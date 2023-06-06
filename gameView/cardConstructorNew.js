@@ -261,8 +261,11 @@ let playerTurn = 0;
 
 function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
     let cardThrowed = document.getElementById(id);
-    removeCard(cardThrowed);
-    cardThrowed = cardThrowed.dataset.value;
+    cardThrowed.classList.add('toPositionOnTable');
+    setTimeout(() => {
+        removeCard(cardThrowed);
+        cardThrowed = cardThrowed.dataset.value;
+      }, 200);
     if (IdPlayerTurn === 1) {
         cardsOnTable[0] = parseInt(cardThrowed);
     }
