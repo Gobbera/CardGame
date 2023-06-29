@@ -350,31 +350,98 @@ function roundConditions(op, IdNextPlayerTurn) {
             break;
         case 2: //empate
             console.log("empate");
-            nextPlayerTurn(IdNextPlayerTurn);
             setWinnerPoint('5');
+            nextPlayerTurn(IdNextPlayerTurn);
             break;
     }
 }
 
+let round = 0;
+let drawCount = 0;
+let teamPurpleCount = 0;
+let teamBrownCount = 0;
+
 function setWinnerPoint (player) {
-    //<debug>
-    debugger;
-    //</debug>
+    if (teamPurpleCount >= 2 ) {
+        console.log('time purple ganhou');
+    }
+    if (teamBrownCount >= 2) {
+        console.log('time brown ganhou');
+    }
     const op = parseInt(player);
     switch (op) {
-        case 1 || 3:
-            //if (mark1.style.backgroundColor) {
-              //  mark2.style.backgroundColor = 'purple';
-            //}
+        case 1:
+            if (round === 1) {
+                mark2.style.backgroundColor = 'purple';
+                teamPurpleCount += 1;
+                break;
+            }
+            if (round === 2) {
+                mark3.style.backgroundColor = 'purple';
+                console.log('time purple ganhou');
+                break;
+            }
             mark1.style.backgroundColor = 'purple';
+            teamPurpleCount += 1;
             break;
-        case 2 || 4:
+        case 2:
+            if (round === 1) {
+                mark2.style.backgroundColor = 'brown';
+                teamBrownCount += 1;
+                break;
+            }
+            if (round === 2) {
+                mark3.style.backgroundColor = 'brown';
+                console.log('time brown ganhou');
+                break;
+            }
             mark1.style.backgroundColor = 'brown';
+            teamBrownCount += 1;
+            break;
+        case 3:
+            if (round === 1) {
+                mark2.style.backgroundColor = 'purple';
+                teamPurpleCount += 1;
+                break;
+            }
+            if (round === 2) {
+                mark3.style.backgroundColor = 'purple';
+                console.log('time purple ganhou');
+                break;
+            }
+            mark1.style.backgroundColor = 'purple';
+            teamPurpleCount += 1;
+            break;
+        case 4:
+            if (round === 1) {
+                mark2.style.backgroundColor = 'brown';
+                teamBrownCount += 1;
+                break;
+            }
+            if (round === 2) {
+                mark3.style.backgroundColor = 'brown';
+                console.log('time brown ganhou');
+                break;
+            }
+            mark1.style.backgroundColor = 'brown';
+            teamBrownCount += 1;
             break;
         case 5:
+            if (round === 1) {
+                mark2.style.backgroundColor = 'yellow';
+                drawCount = 1;
+                break;
+            }
+            if (round === 2) {
+                mark3.style.backgroundColor = 'yellow';
+                break;
+            }
             mark1.style.backgroundColor = 'yellow';
+            drawCount = 1; 
             break;
     }
+    round += 1;
+    console.log(round);
 }
 
 function removeCard(card) {
