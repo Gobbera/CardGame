@@ -262,10 +262,7 @@ let playerTurn = 0;
 function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
     let cardThrowed = document.getElementById(id);
     cardThrowed.classList.add('toPositionOnTable');
-    setTimeout(() => {
-        removeCard(cardThrowed);
-        cardThrowed = cardThrowed.dataset.value;
-      }, 200);
+    cardThrowed = cardThrowed.dataset.value;
     if (IdPlayerTurn === 1) {
         cardsOnTable[0] = parseInt(cardThrowed);
     }
@@ -353,9 +350,10 @@ function roundConditions(op, IdNextPlayerTurn) {
     }
 }
 
-function removeCard(cardThrowed) {
-    cardThrowed.hidden = true;
-
+function removeCard(card) {
+    setTimeout(() => {
+        card.hidden = true;
+    }, 300);
 }
 
 
@@ -409,25 +407,33 @@ const cardSlot3 = document.getElementById('cardSlot3');
 const cardSlot4 = document.getElementById('cardSlot4');
 
 function showLastCardThrowedOnTableP1(card) {
-    cardSlot1.innerHTML = card.innerHTML;
-    cardThrowedViewP1.insertAdjacentElement("beforeend", cardSlot1);
-    cardThrowedViewP1.style.pointerEvents = 'none';
+    setTimeout(() => {
+        cardSlot1.innerHTML = card.innerHTML;
+        cardThrowedViewP1.insertAdjacentElement("beforeend", cardSlot1);
+        cardThrowedViewP1.style.pointerEvents = 'none';
+    }, 300);
 }
 function showLastCardThrowedOnTableP2(card) {
-    cardSlot2.innerHTML = card.innerHTML;
-    cardThrowedViewP2.insertAdjacentElement("beforeend", cardSlot2);
-    cardThrowedViewP2.style.pointerEvents = 'none';
+    setTimeout(() => {
+        cardSlot2.innerHTML = card.innerHTML;
+        cardThrowedViewP2.insertAdjacentElement("beforeend", cardSlot2);
+        cardThrowedViewP2.style.pointerEvents = 'none';
+    }, 300);
 }
 function showLastCardThrowedOnTableP3(card) {
-    cardSlot3.innerHTML = card.innerHTML;
-    cardThrowedViewP3.insertAdjacentElement("beforeend", cardSlot3);
-    cardThrowedViewP3.style.pointerEvents = 'none';
+    setTimeout(() => {
+        cardSlot3.innerHTML = card.innerHTML;
+        cardThrowedViewP3.insertAdjacentElement("beforeend", cardSlot3);
+        cardThrowedViewP3.style.pointerEvents = 'none';
+    }, 300);
     
 }
 function showLastCardThrowedOnTableP4(card) {
-    cardSlot4.innerHTML = card.innerHTML;
-    cardThrowedViewP4.insertAdjacentElement("beforeend", cardSlot4);
-    cardThrowedViewP4.style.pointerEvents = 'none';
+    setTimeout(() => {
+        cardSlot4.innerHTML = card.innerHTML;
+        cardThrowedViewP4.insertAdjacentElement("beforeend", cardSlot4);
+        cardThrowedViewP4.style.pointerEvents = 'none';
+    }, 300);
 }
 
 
