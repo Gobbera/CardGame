@@ -99,3 +99,27 @@ button {
     transition: all 0.2s ease-in-out;
     transform: translate(100px, -40px);
 }
+
+.scoreboardRound {
+    width: 90px;
+    height: 32px;
+}
+
+.scoreboardRoundMark {
+    border: 2px solid black;
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    border-radius: 50%;
+}
+.Mark1 {
+    position: absolute;
+    left: 60px;
+}
+.Mark2 {
+    position: absolute;
+    left: 30px;
+}
+.Mark3 {
+    position: absolute;
+}

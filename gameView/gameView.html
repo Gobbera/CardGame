@@ -8,7 +8,7 @@
     <title>GameView</title>
 </head>
 <body style="display: flex; margin: 0; padding: 0; height: 100vh; width: 100vw;">
-    <div id="player1" style="bottom: 162px; left: 37%; position: absolute; display: flex;">
+    <div id="player1" data-team="purple" style="bottom: 162px; left: 37%; position: absolute; display: flex;">
         <label for="" style="background-color: rgb(235, 4, 4);">Jogador1</label>
         <div id="card1P1" style="left: 100%; position: absolute;" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card1P1); removeCard(this);">
         </div>
@@ -17,7 +17,7 @@
         <div id="card3P1" style="left: 300%; position: absolute;" onclick="throwCard(id, 2, 1); showLastCardThrowedOnTableP1(card3P1); removeCard(this);">
         </div>
     </div>
-    <div id="player2" style="bottom: 30%; right: 140px; position: absolute; display: flex; transform: rotate(-90deg);">
+    <div id="player2" data-team="brown" style="bottom: 30%; right: 140px; position: absolute; display: flex; transform: rotate(-90deg);">
         <label for="" style="transform: rotate(90deg); background-color: rgb(253, 236, 0);">Jogador2</label>
         <div id="card1P2" style="left: 100%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card1P2); removeCard(this);">
         </div>
@@ -26,7 +26,7 @@
         <div id="card3P2" style="left: 300%; position: absolute;" onclick="throwCard(id, 3, 2); showLastCardThrowedOnTableP2(card3P2); removeCard(this);">
         </div>
     </div>
-    <div id="player3" style="top: 162px; right: 37%; position: absolute; display: flex; transform: rotate(180deg);">
+    <div id="player3" data-team="purple" style="top: 162px; right: 37%; position: absolute; display: flex; transform: rotate(180deg);">
         <label for="" style="background-color: rgb(38, 0, 253); transform: rotate(180deg)">Jogador3</label>
         <div id="card1P3" style="left: 100%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card1P3); removeCard(this);">
         </div>
@@ -35,7 +35,7 @@
         <div id="card3P3" style="left: 300%; position: absolute;" onclick="throwCard(id, 4, 3); showLastCardThrowedOnTableP3(card3P3); removeCard(this);">
         </div>
     </div>
-    <div id="player4" style="top: 30%; left: 140px; position: absolute; display: flex; transform: rotate(90deg);">
+    <div id="player4" data-team="brown" style="top: 30%; left: 140px; position: absolute; display: flex; transform: rotate(90deg);">
         <label for="" style="transform: rotate(-90deg); background-color: rgb(11, 199, 74);">Jogador4</label>
         <div id="card1P4" style="left: 100%; position: absolute;" onclick="throwCard(id, 1, 4); showLastCardThrowedOnTableP4(card1P4); removeCard(this);">
         </div>
@@ -62,6 +62,11 @@
     </div>
     <div  id="cardThrowedViewP4" class="card-slot" style="bottom: 30%; left: 20%;">
         <div id="cardSlot4"></div>
+    </div>
+    <div id="scoreboardRound" class="scoreboardRound" style="position: absolute; top: 2%; right: 2%">
+        <div id="mark1" class="scoreboardRoundMark Mark1"></div>
+        <div id="mark2" class="scoreboardRoundMark Mark2"></div>
+        <div id="mark3" class="scoreboardRoundMark Mark3"></div>
     </div>
 </body>
 <script src="cardConstructorNew.js"></script>

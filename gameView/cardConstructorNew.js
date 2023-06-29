@@ -19,6 +19,10 @@ const player2 = document.getElementById('player2');
 const player3 = document.getElementById('player3');
 const player4 = document.getElementById('player4');
 
+const mark1 = document.getElementById('mark1');
+const mark2 = document.getElementById('mark2');
+const mark3 = document.getElementById('mark3');
+
 const vira = document.getElementById('vira');
 
 const viraContainer = document.getElementById('viraContainer');
@@ -341,11 +345,34 @@ function roundConditions(op, IdNextPlayerTurn) {
     switch (op) {
         case 1: //vitoria jogador
             console.log("vitoraP" + IdNextPlayerTurn);
+            setWinnerPoint(IdNextPlayerTurn);
             nextPlayerTurn(IdNextPlayerTurn);
             break;
         case 2: //empate
             console.log("empate");
             nextPlayerTurn(IdNextPlayerTurn);
+            setWinnerPoint('5');
+            break;
+    }
+}
+
+function setWinnerPoint (player) {
+    //<debug>
+    debugger;
+    //</debug>
+    const op = parseInt(player);
+    switch (op) {
+        case 1 || 3:
+            //if (mark1.style.backgroundColor) {
+              //  mark2.style.backgroundColor = 'purple';
+            //}
+            mark1.style.backgroundColor = 'purple';
+            break;
+        case 2 || 4:
+            mark1.style.backgroundColor = 'brown';
+            break;
+        case 5:
+            mark1.style.backgroundColor = 'yellow';
             break;
     }
 }
