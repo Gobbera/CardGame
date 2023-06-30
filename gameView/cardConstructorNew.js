@@ -362,23 +362,22 @@ let teamPurpleCount = 0;
 let teamBrownCount = 0;
 
 function setWinnerPoint (player) {
-    if (teamPurpleCount >= 2 ) {
-        console.log('time purple ganhou');
-    }
-    if (teamBrownCount >= 2) {
-        console.log('time brown ganhou');
-    }
     const op = parseInt(player);
     switch (op) {
         case 1:
             if (round === 1) {
                 mark2.style.backgroundColor = 'purple';
                 teamPurpleCount += 1;
+                if (teamPurpleCount === 2) {
+                    mark3.style.backgroundColor = 'purple';
+                    setWinnerRound('purple');
+                    break;
+                }
                 break;
             }
             if (round === 2) {
                 mark3.style.backgroundColor = 'purple';
-                console.log('time purple ganhou');
+                setWinnerRound('purple');
                 break;
             }
             mark1.style.backgroundColor = 'purple';
@@ -388,11 +387,16 @@ function setWinnerPoint (player) {
             if (round === 1) {
                 mark2.style.backgroundColor = 'brown';
                 teamBrownCount += 1;
+                if (teamBrownCount === 2) {
+                    mark3.style.backgroundColor = 'brown';
+                    setWinnerRound('brown');
+                    break;
+                }
                 break;
             }
             if (round === 2) {
                 mark3.style.backgroundColor = 'brown';
-                console.log('time brown ganhou');
+                setWinnerRound('brown');
                 break;
             }
             mark1.style.backgroundColor = 'brown';
@@ -402,11 +406,16 @@ function setWinnerPoint (player) {
             if (round === 1) {
                 mark2.style.backgroundColor = 'purple';
                 teamPurpleCount += 1;
+                if (teamPurpleCount === 2) {
+                    mark3.style.backgroundColor = 'purple';
+                    setWinnerRound('purple');
+                    break;
+                }
                 break;
             }
             if (round === 2) {
                 mark3.style.backgroundColor = 'purple';
-                console.log('time purple ganhou');
+                setWinnerRound('purple');
                 break;
             }
             mark1.style.backgroundColor = 'purple';
@@ -416,11 +425,16 @@ function setWinnerPoint (player) {
             if (round === 1) {
                 mark2.style.backgroundColor = 'brown';
                 teamBrownCount += 1;
+                if (teamBrownCount === 2) {
+                    mark3.style.backgroundColor = 'brown';
+                    setWinnerRound('brown');
+                    break;
+                }
                 break;
             }
             if (round === 2) {
                 mark3.style.backgroundColor = 'brown';
-                console.log('time brown ganhou');
+                setWinnerRound('brown');
                 break;
             }
             mark1.style.backgroundColor = 'brown';
@@ -429,11 +443,13 @@ function setWinnerPoint (player) {
         case 5:
             if (round === 1) {
                 mark2.style.backgroundColor = 'yellow';
+                console.log('empate1');
                 drawCount = 1;
                 break;
             }
             if (round === 2) {
                 mark3.style.backgroundColor = 'yellow';
+                console.log('empate2');
                 break;
             }
             mark1.style.backgroundColor = 'yellow';
@@ -442,6 +458,15 @@ function setWinnerPoint (player) {
     }
     round += 1;
     console.log(round);
+}
+
+function setWinnerRound(winner) {
+    if (winner === 'purple') {
+        console.log('time purple ganhou');
+    }
+    if (winner === 'brown') {
+        console.log('time brown ganhou');
+    }
 }
 
 function removeCard(card) {
