@@ -228,7 +228,7 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
     if (IdPlayerTurn === 4) {
         cardsOnTable[3] = parseInt(cardThrowed);
     }
-    console.log(cardsOnTable);
+    console.log('cartas na mesa/valores', cardsOnTable);
     playerTurn += 1;
     if (playerTurn === 4) {
         if (cardsOnTable[0] > cardsOnTable[1] &&
@@ -288,7 +288,7 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
 
 
 function roundConditions(op, IdNextPlayerTurn) {
-    console.log(cardsOnTable);
+    console.log('cartas na mesa/valores', cardsOnTable);
     playerTurn = 0;
     cardsOnTable = [p1, p2, p3, p4]
     switch (op) {

@@ -283,7 +283,7 @@ function throwCard(id, IdNextPlayerTurn, IdPlayerTurn) {
     if (IdPlayerTurn === 4) {
         cardsOnTable[3] = parseInt(cardThrowed);
     }
-    console.log(cardsOnTable);
+    console.log('cartas na mesa/valores', cardsOnTable);
     playerTurn += 1;
     if (playerTurn === 4) {
         if (cardsOnTable[0] > cardsOnTable[1] &&
@@ -467,7 +467,7 @@ function setWinnerPoint (player) {
             break;
     }
     round += 1;
-    console.log(round);
+    console.log('round:', round, 'drawCount:', drawCount, 'teamPurpleCount:', teamPurpleCount, 'teamBrownCount:', teamBrownCount);
 }
 
 function setWinnerRound(winner) {
@@ -484,10 +484,6 @@ function setWinnerRound(winner) {
     deck.forEach(function(carta) {
         carta.pick = true;
     });
-    round = 0;
-    drawCount = 0;
-    teamPurpleCount = 0;
-    teamBrownCount = 0;
     setTimeout(() => {
         mark1.style.backgroundColor = 'transparent';
         mark2.style.backgroundColor = 'transparent';
@@ -601,6 +597,11 @@ function removeCardsFromTable () {
 } */
 
 function startGame() {
+    round = 0;
+    drawCount = 0;
+    teamPurpleCount = 0;
+    teamBrownCount = 0;
+    console.log('round:', round, 'drawCount:', drawCount, 'teamPurpleCount:', teamPurpleCount, 'teamBrownCount:', teamBrownCount);
     player1Deck();
     player2Deck();
     player3Deck();
