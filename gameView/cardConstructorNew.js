@@ -479,14 +479,12 @@ function setWinnerRound(winner) {
         purplePoints += 1;
         console.log('Pontos do time purple:', purplePoints);
         teamPurpleScoreBoard.innerHTML = purplePoints.toString();
-        //setValueOnMatchScoreBoard(winner);
     }
     if (winner === 'brown') {
         console.log('time brown ganhou');
         brownPoints += 1;
         console.log('Pontos do time brown:', brownPoints);
         teamBrownScoreBoard.innerHTML = brownPoints.toString();
-        //setValueOnMatchScoreBoard(winner);
     }
     deck.forEach(function(carta) {
         carta.pick = true;
@@ -593,15 +591,6 @@ function removeCardsFromTable () {
     cardSlot3.innerHTML = '';
     cardSlot4.innerHTML = '';
 }
-
-/* function setValueOnMatchScoreBoard (winner) {
-    if (winner === 'purple') {
-        teamBrownScoreBoard.innerHTML = +1;
-    }
-    if (winner === 'brown') {
-        teamPurpleScoreBoard.innerHTML = +1;
-    }
-} */
 
 function startGame() {
     round = 0;
