@@ -30,6 +30,13 @@ const vira = document.getElementById('vira');
 
 const viraContainer = document.getElementById('viraContainer');
 
+const btnTruco = document.getElementById('btnTruco');
+const btnSim = document.getElementById('btnSim');
+const btnNao = document.getElementById('btnNao');
+const btn6 = document.getElementById('btn6');
+const btn9 = document.getElementById('btn9');
+const btn12 = document.getElementById('btn12');
+
 const ouros = 100;
 const espadas = 1000;
 const copas = 10000;
@@ -590,6 +597,13 @@ function removeCardsFromTable () {
     cardSlot2.innerHTML = '';
     cardSlot3.innerHTML = '';
     cardSlot4.innerHTML = '';
+}
+
+function truco () {
+    btnNao.hidden = false;
+    btnSim.hidden = false;
+    btn6.hidden = false;
+    btnTruco.hidden = true;
 }
 
 function startGame() {
