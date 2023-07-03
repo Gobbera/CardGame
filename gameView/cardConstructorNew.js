@@ -97,6 +97,7 @@ let deck = [
     ouros2, espadas2, copas2, paus2,
     ouros3, espadas3, copas3, paus3
 ]
+
 let cardName;
 let cardValueColor;
 let naipe;
@@ -352,7 +353,7 @@ function roundConditions(op, IdNextPlayerTurn) {
             nextPlayerTurn(IdNextPlayerTurn);
             setTimeout(() => {
                 removeCardsFromTable();
-            }, 2600);
+            }, 2000);
             break;
             case 2: //empate
             console.log("empate");
@@ -360,7 +361,7 @@ function roundConditions(op, IdNextPlayerTurn) {
             nextPlayerTurn(IdNextPlayerTurn);
             setTimeout(() => {
                 removeCardsFromTable();
-            }, 2600);
+            }, 2000);
             break;
     }
 }
@@ -480,6 +481,12 @@ function setWinnerRound(winner) {
         teamBrownScoreBoard.innerHTML = +1;
         //setValueOnMatchScoreBoard(winner);
     }
+    deck.forEach(function(carta) {
+        carta.pick = true;
+    });
+    setTimeout(() => {
+        startGame();
+    }, 4000);
 }
 
 function removeCard(card) {
