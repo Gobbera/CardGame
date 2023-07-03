@@ -354,15 +354,15 @@ function roundConditions(op, IdNextPlayerTurn) {
             setTimeout(() => {
                 removeCardsFromTable();
             }, 2000);
-            break;
-            case 2: //empate
+        break;
+        case 2: //empate
             console.log("empate");
             setWinnerPoint('5');
             nextPlayerTurn(IdNextPlayerTurn);
             setTimeout(() => {
                 removeCardsFromTable();
             }, 2000);
-            break;
+        break;
     }
 }
 
@@ -491,7 +491,10 @@ function setWinnerRound(winner) {
 
 function removeCard(card) {
     setTimeout(() => {
-        card.hidden = true;
+        card.innerHTML = '';
+        card.classList.remove('toPositionOnTable');
+        card.classList.add('toPositionOnOrigem')
+        card.classList.remove('toPositionOnOrigem');
     }, 300);
 }
 

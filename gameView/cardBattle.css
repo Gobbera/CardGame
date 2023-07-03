@@ -99,6 +99,9 @@ button {
     transition: all 0.2s ease-in-out;
     transform: translate(100px, -40px);
 }
+toPositionOnOrigem {
+    transform: translate(-100px, 40px);
+}
 
 .scoreboardRound {
     width: 90px;
