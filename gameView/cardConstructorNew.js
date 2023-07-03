@@ -23,6 +23,9 @@ const mark1 = document.getElementById('mark1');
 const mark2 = document.getElementById('mark2');
 const mark3 = document.getElementById('mark3');
 
+const teamBrownScoreBoard = document.getElementById('teamBrownScoreBoard');
+const teamPurpleScoreBoard = document.getElementById('teamPurpleScoreBoard');
+
 const vira = document.getElementById('vira');
 
 const viraContainer = document.getElementById('viraContainer');
@@ -469,9 +472,13 @@ function setWinnerPoint (player) {
 function setWinnerRound(winner) {
     if (winner === 'purple') {
         console.log('time purple ganhou');
+        teamPurpleScoreBoard.innerHTML = +1;
+        //setValueOnMatchScoreBoard(winner);
     }
     if (winner === 'brown') {
         console.log('time brown ganhou');
+        teamBrownScoreBoard.innerHTML = +1;
+        //setValueOnMatchScoreBoard(winner);
     }
 }
 
@@ -567,6 +574,14 @@ function removeCardsFromTable () {
     cardSlot4.innerHTML = '';
 }
 
+/* function setValueOnMatchScoreBoard (winner) {
+    if (winner === 'purple') {
+        teamBrownScoreBoard.innerHTML = +1;
+    }
+    if (winner === 'brown') {
+        teamPurpleScoreBoard.innerHTML = +1;
+    }
+} */
 
 function startGame() {
     player1Deck();
