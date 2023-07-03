@@ -484,7 +484,14 @@ function setWinnerRound(winner) {
     deck.forEach(function(carta) {
         carta.pick = true;
     });
+    round = 0;
+    drawCount = 0;
+    teamPurpleCount = 0;
+    teamBrownCount = 0;
     setTimeout(() => {
+        mark1.style.backgroundColor = 'transparent';
+        mark2.style.backgroundColor = 'transparent';
+        mark3.style.backgroundColor = 'transparent';
         startGame();
     }, 4000);
 }
