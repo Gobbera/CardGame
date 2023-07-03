@@ -347,11 +347,17 @@ function roundConditions(op, IdNextPlayerTurn) {
             console.log("vitoraP" + IdNextPlayerTurn);
             setWinnerPoint(IdNextPlayerTurn);
             nextPlayerTurn(IdNextPlayerTurn);
+            setTimeout(() => {
+                removeCardsFromTable();
+            }, 2600);
             break;
-        case 2: //empate
+            case 2: //empate
             console.log("empate");
             setWinnerPoint('5');
             nextPlayerTurn(IdNextPlayerTurn);
+            setTimeout(() => {
+                removeCardsFromTable();
+            }, 2600);
             break;
     }
 }
@@ -545,7 +551,6 @@ function showLastCardThrowedOnTableP3(card) {
         cardThrowedViewP3.insertAdjacentElement("beforeend", cardSlot3);
         cardThrowedViewP3.style.pointerEvents = 'none';
     }, 300);
-    
 }
 function showLastCardThrowedOnTableP4(card) {
     setTimeout(() => {
@@ -553,6 +558,13 @@ function showLastCardThrowedOnTableP4(card) {
         cardThrowedViewP4.insertAdjacentElement("beforeend", cardSlot4);
         cardThrowedViewP4.style.pointerEvents = 'none';
     }, 300);
+}
+
+function removeCardsFromTable () {
+    cardSlot1.innerHTML = '';
+    cardSlot2.innerHTML = '';
+    cardSlot3.innerHTML = '';
+    cardSlot4.innerHTML = '';
 }
 
 
