@@ -604,9 +604,37 @@ function truco () {
     btnSim.hidden = false;
     btn6.hidden = false;
     btnTruco.hidden = true;
+   // if ()
+}
+
+function sim () {
+    if(purplePoints && brownPoints === 8) {
+        brownPoints = 11;
+        purplePoints = 11;
+        return;
+    }
+    if(purplePoints && brownPoints === 5) {
+        brownPoints = 8;
+        purplePoints = 8;
+        return;
+    }
+    if(purplePoints && brownPoints === 2) {
+        brownPoints = 5;
+        purplePoints = 5;
+        return;
+    }
+    purplePoints = 2;
+    brownPoints = 2;     
+    btnNao.hidden = true;
+    btnSim.hidden = true;
+    btn6.hidden = true;
+    btnTruco.hidden = false;
+    btnTruco.innerHTML = '6';
 }
 
 function startGame() {
+    purplePoints = 2;
+    brownPoints = 2;
     round = 0;
     drawCount = 0;
     teamPurpleCount = 0;
