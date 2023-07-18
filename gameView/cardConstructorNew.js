@@ -608,10 +608,11 @@ function truco () {
         return;
     }
     if(purplePoints && brownPoints === 5) {
-        
+        btn6.innerHTML = '12';
         return;
     }
     if(purplePoints && brownPoints === 2) {
+        btn6.innerHTML = '9';
         return;
     }
 }
@@ -641,6 +642,7 @@ function sim () {
         brownPoints = 5;
         purplePoints = 5;
         btnTruco.innerHTML = '9';
+        btn6.innerHTML = '9';
         console.log('valendo', brownPoints +1, 'pontos');
         return;
     }
