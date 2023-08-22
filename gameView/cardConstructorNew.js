@@ -482,12 +482,14 @@ let brownPoints = 0;
 
 function setWinnerRound(winner) {
     if (winner === 'purple') {
+        roundFeedF(`Time ${winner} Venceu esta Rodada`);
         console.log('time purple ganhou');
         purplePoints += 1;
         console.log('Pontos do time purple:', purplePoints);
         teamPurpleScoreBoard.innerHTML = purplePoints.toString();
     }
     if (winner === 'brown') {
+        roundFeedF(`Time ${winner} Venceu esta Rodada`);
         console.log('time brown ganhou');
         brownPoints += 1;
         console.log('Pontos do time brown:', brownPoints);
@@ -617,6 +619,15 @@ function truco () {
     }
 }
 
+function nao () {
+    btnNao.hidden = true;
+    btnSim.hidden = true;
+    btn6.hidden = true;
+    btnTruco.hidden = false;
+    roundFeedF('Correu!');
+    setTimeout(startGame, 3000);
+}
+
 function sim () {
     if(purplePoints && brownPoints === 11) {
         return;  
@@ -667,6 +678,16 @@ function startGame() {
     viras();
     roundRuleSettings();
     nextPlayerTurn(1);
+}
+
+const roundFeed = document.getElementById('roundFeed');
+
+function roundFeedF(text) {
+    roundFeed.hidden = false;
+    roundFeed.innerHTML = text;
+    setTimeout(() => {
+        roundFeed.hidden = true;
+    }, 3000);
 }
 
 function chooseNaipesQuantityOnValue(op, naipeImage, royalityClass) {
