@@ -1,3 +1,5 @@
+let pTurn = 1;
+
 const card1P1 = document.getElementById('card1P1');
 const card2P1 = document.getElementById('card2P1');
 const card3P1 = document.getElementById('card3P1');
@@ -42,69 +44,73 @@ const espadas = 1000;
 const copas = 10000;
 const paus = 100000;
 
-let ouros4 = { id: 1, Name: '4', naipe: 'ouros', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'redColor' };
-let espadas4 = { id: 1, Name: '4', naipe: 'espadas', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'blackColor' };
-let copas4 = { id: 1, Name: '4', naipe: 'copas', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'redColor' };
-let paus4 = { id: 1, Name: '4', naipe: 'paus', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'blackColor' };
+function setCards () {
+    deck.splice(0, deck.length);
 
-let ouros5 = { id: 2, Name: '5', naipe: 'ouros', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'redColor' };
-let espadas5 = { id: 2, Name: '5', naipe: 'espadas', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'blackColor' };
-let copas5 = { id: 2, Name: '5', naipe: 'copas', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'redColor' };
-let paus5 = { id: 2, Name: '5', naipe: 'paus', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'blackColor' };
+    let ouros4 = { id: 1, Name: '4', naipe: 'ouros', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'redColor' };
+    let espadas4 = { id: 1, Name: '4', naipe: 'espadas', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'blackColor' };
+    let copas4 = { id: 1, Name: '4', naipe: 'copas', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'redColor' };
+    let paus4 = { id: 1, Name: '4', naipe: 'paus', value: 1, pick: true, naipesOnValueQuantity: 4, cardColor: 'blackColor' };
 
-let ouros6 = { id: 3, Name: '6', naipe: 'ouros', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'redColor' };
-let espadas6 = { id: 3, Name: '6', naipe: 'espadas', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'blackColor' };
-let copas6 = { id: 3, Name: '6', naipe: 'copas', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'redColor' };
-let paus6 = { id: 3, Name: '6', naipe: 'paus', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'blackColor' };
+    let ouros5 = { id: 2, Name: '5', naipe: 'ouros', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'redColor' };
+    let espadas5 = { id: 2, Name: '5', naipe: 'espadas', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'blackColor' };
+    let copas5 = { id: 2, Name: '5', naipe: 'copas', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'redColor' };
+    let paus5 = { id: 2, Name: '5', naipe: 'paus', value: 2, pick: true, naipesOnValueQuantity: 5, cardColor: 'blackColor' };
 
-let ouros7 = { id: 4, Name: '7', naipe: 'ouros', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'redColor' };
-let espadas7 = { id: 4, Name: '7', naipe: 'espadas', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'blackColor' };
-let copas7 = { id: 4, Name: '7', naipe: 'copas', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'redColor' };
-let paus7 = { id: 4, Name: '7', naipe: 'paus', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'blackColor' };
+    let ouros6 = { id: 3, Name: '6', naipe: 'ouros', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'redColor' };
+    let espadas6 = { id: 3, Name: '6', naipe: 'espadas', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'blackColor' };
+    let copas6 = { id: 3, Name: '6', naipe: 'copas', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'redColor' };
+    let paus6 = { id: 3, Name: '6', naipe: 'paus', value: 3, pick: true, naipesOnValueQuantity: 6, cardColor: 'blackColor' };
 
-let ourosQ = { id: 5, Name: 'Q', naipe: 'ouros', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let espadasQ = { id: 5, Name: 'Q', naipe: 'espadas', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
-let copasQ = { id: 5, Name: 'Q', naipe: 'copas', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let pausQ = { id: 5, Name: 'Q', naipe: 'paus', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let ouros7 = { id: 4, Name: '7', naipe: 'ouros', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'redColor' };
+    let espadas7 = { id: 4, Name: '7', naipe: 'espadas', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'blackColor' };
+    let copas7 = { id: 4, Name: '7', naipe: 'copas', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'redColor' };
+    let paus7 = { id: 4, Name: '7', naipe: 'paus', value: 4, pick: true, naipesOnValueQuantity: 7, cardColor: 'blackColor' };
 
-let ourosJ = { id: 6, Name: 'J', naipe: 'ouros', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let espadasJ = { id: 6, Name: 'J', naipe: 'espadas', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
-let copasJ = { id: 6, Name: 'J', naipe: 'copas', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let pausJ = { id: 6, Name: 'J', naipe: 'paus', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let ourosQ = { id: 5, Name: 'Q', naipe: 'ouros', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let espadasQ = { id: 5, Name: 'Q', naipe: 'espadas', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let copasQ = { id: 5, Name: 'Q', naipe: 'copas', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let pausQ = { id: 5, Name: 'Q', naipe: 'paus', value: 5, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
 
-let ourosK = { id: 7, Name: 'K', naipe: 'ouros', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let espadasK = { id: 7, Name: 'K', naipe: 'espadas', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
-let copasK = { id: 7, Name: 'K', naipe: 'copas', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
-let pausK = { id: 7, Name: 'K', naipe: 'paus', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let ourosJ = { id: 6, Name: 'J', naipe: 'ouros', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let espadasJ = { id: 6, Name: 'J', naipe: 'espadas', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let copasJ = { id: 6, Name: 'J', naipe: 'copas', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let pausJ = { id: 6, Name: 'J', naipe: 'paus', value: 6, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
 
-let ourosA = { id: 8, Name: 'A', naipe: 'ouros', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'redColor' };
-let espadasA = { id: 8, Name: 'A', naipe: 'espadas', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'blackColor' };
-let copasA = { id: 8, Name: 'A', naipe: 'copas', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'redColor' };
-let pausA = { id: 8, Name: 'A', naipe: 'paus', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'blackColor' };
+    let ourosK = { id: 7, Name: 'K', naipe: 'ouros', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let espadasK = { id: 7, Name: 'K', naipe: 'espadas', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
+    let copasK = { id: 7, Name: 'K', naipe: 'copas', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'redColor' };
+    let pausK = { id: 7, Name: 'K', naipe: 'paus', value: 7, pick: true, naipesOnValueQuantity: 11, cardColor: 'blackColor' };
 
-let ouros2 = { id: 9, Name: '2', naipe: 'ouros', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'redColor' };
-let espadas2 = { id: 9, Name: '2', naipe: 'espadas', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'blackColor' };
-let copas2 = { id: 9, Name: '2', naipe: 'copas', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'redColor' };
-let paus2 = { id: 9, Name: '2', naipe: 'paus', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'blackColor' };
+    let ourosA = { id: 8, Name: 'A', naipe: 'ouros', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'redColor' };
+    let espadasA = { id: 8, Name: 'A', naipe: 'espadas', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'blackColor' };
+    let copasA = { id: 8, Name: 'A', naipe: 'copas', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'redColor' };
+    let pausA = { id: 8, Name: 'A', naipe: 'paus', value: 8, pick: true, naipesOnValueQuantity: 1, cardColor: 'blackColor' };
 
-let ouros3 = { id: 10, Name: '3', naipe: 'ouros', value: 10, pick: true ,naipesOnValueQuantity: 3, cardColor: 'redColor' };
-let espadas3 = { id: 10, Name: '3', naipe: 'espadas', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'blackColor' };
-let copas3 = { id: 10, Name: '3', naipe: 'copas', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'redColor' };
-let paus3 = { id: 10, Name: '3', naipe: 'paus', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'blackColor' };
+    let ouros2 = { id: 9, Name: '2', naipe: 'ouros', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'redColor' };
+    let espadas2 = { id: 9, Name: '2', naipe: 'espadas', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'blackColor' };
+    let copas2 = { id: 9, Name: '2', naipe: 'copas', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'redColor' };
+    let paus2 = { id: 9, Name: '2', naipe: 'paus', value: 9, pick: true , naipesOnValueQuantity: 2, cardColor: 'blackColor' };
 
-let deck = [
-    ouros4, espadas4, copas4, paus4,
-    ouros5, espadas5, copas5, paus5,
-    ouros6, espadas6, copas6, paus6,
-    ouros7, espadas7, copas7, paus7,
-    ourosQ, espadasQ, copasQ, pausQ,
-    ourosJ, espadasJ, copasJ, pausJ,
-    ourosK, espadasK, copasK, pausK,
-    ourosA, espadasA, copasA, pausA,
-    ouros2, espadas2, copas2, paus2,
-    ouros3, espadas3, copas3, paus3
-]
+    let ouros3 = { id: 10, Name: '3', naipe: 'ouros', value: 10, pick: true ,naipesOnValueQuantity: 3, cardColor: 'redColor' };
+    let espadas3 = { id: 10, Name: '3', naipe: 'espadas', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'blackColor' };
+    let copas3 = { id: 10, Name: '3', naipe: 'copas', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'redColor' };
+    let paus3 = { id: 10, Name: '3', naipe: 'paus', value: 10, pick: true, naipesOnValueQuantity: 3, cardColor: 'blackColor' };
 
+    deck.push(
+        ouros4, espadas4, copas4, paus4,
+        ouros5, espadas5, copas5, paus5,
+        ouros6, espadas6, copas6, paus6,
+        ouros7, espadas7, copas7, paus7,
+        ourosQ, espadasQ, copasQ, pausQ,
+        ourosJ, espadasJ, copasJ, pausJ,
+        ourosK, espadasK, copasK, pausK,
+        ourosA, espadasA, copasA, pausA,
+        ouros2, espadas2, copas2, paus2,
+        ouros3, espadas3, copas3, paus3
+        );
+}
+let deck = []
 let cardName;
 let cardValueColor;
 let naipe;
@@ -128,7 +134,6 @@ function getCard() {
     cardValueColor = card.cardColor;
     chooseNaipesQuantityOnValue(naipesOnValueQuantity, naipeImage, royalityClass, cardName);
 }
-
 
 function player1Deck() {
     getCard();
@@ -499,10 +504,7 @@ function setWinnerRound(winner) {
         carta.pick = true;
     });
     setTimeout(() => {
-        mark1.style.backgroundColor = 'transparent';
-        mark2.style.backgroundColor = 'transparent';
-        mark3.style.backgroundColor = 'transparent';
-        startGame();
+        identifyNextPlayerTurn();
     }, 3000);
 }
 
@@ -595,10 +597,10 @@ function showLastCardThrowedOnTableP4(card) {
 }
 
 function removeCardsFromTable () {
-    cardSlot1.innerHTML = '';
-    cardSlot2.innerHTML = '';
-    cardSlot3.innerHTML = '';
-    cardSlot4.innerHTML = '';
+    cardSlot1.remove();//innerHTML = '';
+    cardSlot2.remove();//innerHTML = '';
+    cardSlot3.remove();//innerHTML = '';
+    cardSlot4.remove();//innerHTML = '';
 }
 
 function truco () {
@@ -625,7 +627,9 @@ function nao () {
     btn6.hidden = true;
     btnTruco.hidden = false;
     roundFeedF('Correu!');
-    setTimeout(startGame, 3000);
+    setTimeout(() => {
+        identifyNextPlayerTurn();
+    }, 1000);
 }
 
 function sim () {
@@ -663,21 +667,34 @@ function sim () {
     console.log('valendo', brownPoints +1, 'pontos');
 }
 
-function startGame() {
+function identifyNextPlayerTurn () {
+    pTurn ++;
+    if (pTurn > 4) {
+        pTurn = 1;
+    }
+    startGame(pTurn);
+}
+
+function startGame(pTurn) {
+    console.log(deck);
+    console.log('round:', round, 'drawCount:', drawCount, 'teamPurpleCount:', teamPurpleCount, 'teamBrownCount:', teamBrownCount);
+    mark1.style.backgroundColor = 'transparent';
+    mark2.style.backgroundColor = 'transparent';
+    mark3.style.backgroundColor = 'transparent';
     purplePoints = 0;
     brownPoints = 0;
     round = 0;
     drawCount = 0;
     teamPurpleCount = 0;
     teamBrownCount = 0;
-    console.log('round:', round, 'drawCount:', drawCount, 'teamPurpleCount:', teamPurpleCount, 'teamBrownCount:', teamBrownCount);
+    setCards();
     player1Deck();
     player2Deck();
     player3Deck();
     player4Deck();
     viras();
     roundRuleSettings();
-    nextPlayerTurn(1);
+    nextPlayerTurn(pTurn);
 }
 
 const roundFeed = document.getElementById('roundFeed');
@@ -689,6 +706,8 @@ function roundFeedF(text) {
         roundFeed.hidden = true;
     }, 3000);
 }
+
+function gameWinner () {}
 
 function chooseNaipesQuantityOnValue(op, naipeImage, royalityClass) {
     let cardBody = `<div class="card" style="position: absolute;"">
@@ -799,8 +818,8 @@ function chooseNaipesQuantityOnValue(op, naipeImage, royalityClass) {
             </div>`
             break;
     }
+    
 }
 
 
-
-startGame();
+startGame(pTurn);
